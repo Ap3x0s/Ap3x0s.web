@@ -29,6 +29,7 @@ export const about: Record<Lang, AboutContent> = {
     },
     intro: [
       "My name is Evgeny, alias Ap3x0. I'm 19, a full-stack developer with ~4 years in production. Full cycle: idea → design system → front/back → payments → deploy → security audit.",
+      "Genuinely passionate about technology — from infrastructure and backend to thoughtful design. Automating away the mundane and building systems that just work: that's where the beauty is.",
       "I love the whole journey from idea to production: watching a concept become a real, breathing product — design coming to life, backend handling real traffic, security and infrastructure in harmony. It's not just about the work; it's about witnessing the vision become reality.",
       "💬 Languages: Русский (Native) · English (Fluent) · Tech stack speaks for itself",
     ],
@@ -207,6 +208,7 @@ export const about: Record<Lang, AboutContent> = {
     },
     intro: [
       "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде. Полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
+      "Технологии — по-настоящему своё: от инфраструктуры и бэкенда до продуманного дизайна. Убирать рутину автоматизациями и строить системы, которые просто работают, — в этом есть красота.",
       "Люблю весь путь от идеи до продакшна: как концепция превращается в живой продукт — оживает дизайн, бэкенд держит реальный трафик, безопасность и инфраструктура работают в гармонии. Дело не только в работе — а в том, как замысел становится реальностью.",
       "💬 Языки: Русский (Native) · English (Fluent) · Стек говорит сам за себя",
     ],
