@@ -1,0 +1,218 @@
+---
+import { about } from "../data/about";
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const c = about[lang];
+const t = dict[lang];
+---
+
+<section class="container-page py-16 md:py-24 max-w-5xl">
+  <div class="font-mono text-gold text-sm tracking-widest uppercase">
+    {t.aboutPage.label}
+  </div>
+
+  <!-- Statement -->
+  <h1
+    class="text-4xl md:text-6xl font-bold leading-tight text-white mt-8 tracking-tight"
+  >
+    <span>{c.statement.line1}</span><br />
+    <span class="text-gold">{c.statement.line2}</span>
+  </h1>
+
+  <div class="space-y-6 text-lg md:text-xl leading-relaxed text-neutral-200 max-w-3xl mt-8">
+    {c.intro.map((p) => <p>{p}</p>)}
+  </div>
+
+  <div class="border-t border-line mt-16 pt-16" id="currently-working-on">
+    <!-- Currently working on -->
+    <h2
+      class="font-mono text-gold text-sm mb-8 tracking-widest uppercase flex items-center gap-3"
+    >
+      <span class="w-2 h-2 bg-gold inline-block animate-signal-pulse"></span>
+      {c.currentlyLabel}
+    </h2>
+    <div class="grid md:grid-cols-2 gap-px bg-line border border-line">
+      {
+        c.currently.map((group) => (
+          <div class="bg-black p-6">
+            <h3 class="font-mono text-xs uppercase tracking-widest text-neutral-500 mb-4">
+              {group.group}
+            </h3>
+            <ul class="space-y-3">
+              {group.items.map((item) => (
+                <li>
+                  <span class="text-white font-bold uppercase">{item.name}</span>
+                  <span class="text-neutral-400 text-sm"> — {item.note}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Journey timeline -->
+  <div class="border-t border-line mt-16 pt-16">
+    <h2
+      class="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-10"
+    >
+      {c.journeyLabel}
+    </h2>
+    <div class="border-l border-line pl-6 md:pl-10 space-y-10">
+      {
+        c.journey.map((step) => (
+          <div class="relative">
+            <span class="absolute -left-[31px] md:-left-[47px] top-2 w-3 h-3 bg-gold" />
+            <div class="font-mono text-gold text-sm tracking-widest">
+              {step.year}
+            </div>
+            <h3 class="text-xl md:text-2xl font-bold uppercase text-white mt-1">
+              {step.title}
+            </h3>
+            <p class="text-neutral-300 mt-2 max-w-2xl leading-relaxed">
+              {step.text}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Approach -->
+  <div class="border-t border-line mt-16 pt-16">
+    <h2
+      class="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-10"
+    >
+      {c.approachLabel}
+    </h2>
+    <div class="grid md:grid-cols-2 gap-px bg-line border border-line">
+      {
+        c.approach.map((item) => (
+          <div class="bg-black p-6 md:p-8 group hover:bg-surface transition-colors">
+            <h3 class="text-lg font-bold uppercase text-gold mb-3">
+              {item.title}
+            </h3>
+            <p class="text-neutral-300 leading-relaxed">{item.text}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Stack -->
+  <div class="border-t border-line mt-16 pt-16">
+    <h2
+      class="font-mono text-gold text-sm mb-8 tracking-widest uppercase"
+    >
+      // {c.stackLabel}
+    </h2>
+    <div class="border-t border-line">
+      {
+        c.stack.map((row) => (
+          <div class="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-4 border-b border-line">
+            <div class="font-mono text-xs uppercase tracking-widest text-neutral-500 md:w-40 shrink-0">
+              {row.area}
+            </div>
+            <div class="text-neutral-200 leading-relaxed">{row.techs}</div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- Metrics -->
+  <div class="border-t border-line mt-16 pt-16">
+    <h2 class="font-mono text-gold text-sm mb-8 tracking-widest uppercase">
+      // {c.metricsLabel}
+    </h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line">
+      {
+        c.metrics.map((m) => (
+          <div class="bg-black p-6 text-center">
+            <div class="font-display text-4xl md:text-5xl text-gold uppercase">
+              {m.value}
+            </div>
+            <div class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 mt-3">
+              {m.label}
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- How I work -->
+  <div class="border-t border-line mt-16 pt-16">
+    <h2
+      class="text-3xl md:text-5xl font-black uppercase tracking-tight text-white mb-8"
+    >
+      {c.workLabel}
+    </h2>
+    <ul class="space-y-5 max-w-3xl">
+      {
+        c.work.map((item) => (
+          <li class="flex gap-4">
+            <span class="font-mono text-gold shrink-0 mt-1">▸</span>
+            <span class="text-neutral-200 text-lg leading-relaxed">{item}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+
+  <!-- Philosophy -->
+  <div class="border-t border-line mt-16 pt-16">
+    <h2 class="font-mono text-gold text-sm mb-8 tracking-widest uppercase">
+      // {c.philosophyLabel}
+    </h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      {
+        c.philosophy.map((p) => (
+          <div class="border border-line p-6 md:p-8 hover:border-gold transition-colors">
+            <h3 class="text-xl font-bold uppercase text-white mb-4">
+              {p.title}
+            </h3>
+            <p class="text-neutral-300 leading-relaxed italic">“{p.text}”</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- CTAs -->
+  <div class="grid md:grid-cols-2 gap-px bg-line border border-line mt-16">
+    {
+      [c.ctaTelegram, c.ctaGithub].map((cta) => (
+        <a
+          href={cta.link}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class="group bg-black p-6 md:p-8 hover:bg-surface transition-colors"
+        >
+          <div class="font-mono text-gold text-xs tracking-widest uppercase mb-4">
+            {cta.label}
+          </div>
+          <div class="text-xl font-bold uppercase text-white group-hover:text-gold transition-colors">
+            {cta.title}
+          </div>
+          <p class="text-neutral-400 mt-2">{cta.text}</p>
+          <span class="inline-block mt-4 font-mono text-gold group-hover:translate-x-1 transition-transform">
+            →
+          </span>
+        </a>
+      ))
+    }
+  </div>
+
+  <div
+    class="font-mono text-[10px] text-neutral-600 uppercase tracking-widest mt-16"
+  >
+    SYSTEM_UPDATE: OCT_2026 // AUTHOR: AP3X0
+  </div>
+</section>

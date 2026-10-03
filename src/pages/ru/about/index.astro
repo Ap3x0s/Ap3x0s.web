@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import About from "../../../components/About.astro";
+import { about } from "../../../data/about";
+---
+
+<BaseLayout
+  title="О себе"
+  description={about.ru.statement.line2}
+  lang="ru"
+>
+  <About lang="ru" />
+</BaseLayout>

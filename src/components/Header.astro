@@ -1,0 +1,116 @@
+---
+import MobileMenu from "./MobileMenu.tsx";
+import { dict, localizePath, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang];
+const path = Astro.url.pathname;
+
+const navItems = [
+  { id: "01", label: t.nav.root, base: "/" },
+  { id: "02", label: t.nav.works, base: "/works" },
+  { id: "03", label: t.nav.about, base: "/about" },
+  { id: "04", label: t.nav.log, base: "/blog" },
+  { id: "05", label: t.nav.skills, base: "/skills" },
+];
+
+function href(base: string): string {
+  if (lang === "ru") return base === "/" ? "/ru" : `/ru${base}`;
+  return base;
+}
+
+function isActive(base: string): boolean {
+  const clean = path.replace(/\/+$/, "") || "/";
+  const stripped = lang === "ru" ? clean.replace(/^\/ru/, "") || "/" : clean;
+  if (base === "/") return stripped === "/";
+  return stripped === base || stripped.startsWith(`${base}/`);
+}
+
+---
+
+<header class="fixed top-0 left-0 w-full z-50">
+  <div
+    class="absolute inset-0 bg-black/40 backdrop-blur-md border-b border-white/10 pointer-events-none"
+  >
+  </div>
+
+  <div
+    class="relative container-page py-5 md:py-6 flex justify-between items-center mix-blend-difference"
+  >
+    <a
+      href={href("/")}
+      class="text-xl font-bold tracking-tighter text-white uppercase font-sans"
+    >
+      AP3X0<span
+        class="inline-block w-1 h-1 bg-gold ml-1 align-middle"></span><span
+        class="text-xs ml-1 opacity-50">WEB</span
+      >
+    </a>
+
+    <nav class="hidden md:flex gap-8 items-center">
+      {
+        navItems.slice(1).map((item) => (
+          <a
+            href={href(item.base)}
+            class:list={[
+              "text-sm font-mono uppercase transition-colors",
+              isActive(item.base)
+                ? "text-gold"
+                : "text-white hover:text-gold",
+            ]}
+          >
+            {item.label}
+          </a>
+        ))
+      }
+      <div class="border-l border-white/20 h-4 mx-2"></div>
+      <a
+        href={localizePath(path, "en")}
+        class:list={[
+          "text-xs font-mono uppercase transition-colors",
+          lang === "en" ? "text-gold" : "text-neutral-500 hover:text-white",
+        ]}>[EN]</a
+      >
+      <a
+        href={localizePath(path, "ru")}
+        class:list={[
+          "text-xs font-mono uppercase transition-colors",
+          lang === "ru" ? "text-gold" : "text-neutral-500 hover:text-white",
+        ]}>[RU]</a
+      >
+    </nav>
+
+    <div class="md:hidden flex items-center gap-4">
+      <div class="flex gap-2 text-xs font-mono uppercase">
+        <a
+          href={localizePath(path, "en")}
+          class={lang === "en" ? "text-gold" : "text-neutral-500"}>EN</a
+        >
+        <span class="text-neutral-700">/</span>
+        <a
+          href={localizePath(path, "ru")}
+          class={lang === "ru" ? "text-gold" : "text-neutral-500"}>RU</a
+        >
+      </div>
+      <MobileMenu
+        client:load
+        items={navItems.map((i) => ({
+          id: i.id,
+          label: i.label,
+          href: href(i.base),
+        }))}
+        labels={{
+          menu: t.menu.label,
+          close: t.menu.close,
+          systemStatus: t.menu.systemStatus,
+          online: t.menu.online,
+          build: t.menu.build,
+        }}
+      />
+    </div>
+  </div>
+</header>

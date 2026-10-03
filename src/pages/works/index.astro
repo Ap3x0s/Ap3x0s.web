@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import WorksGrid from "../../components/WorksGrid.astro";
+import { dict } from "../../i18n/dict";
+
+const t = dict.en.works;
+---
+
+<BaseLayout title={t.title} description={t.intro} lang="en">
+  <WorksGrid lang="en" />
+</BaseLayout>

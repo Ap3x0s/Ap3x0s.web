@@ -1,0 +1,59 @@
+---
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].footer;
+---
+
+<footer
+  class="w-full border-t border-line bg-black py-8 mt-auto z-20 relative"
+>
+  <div
+    class="container-page flex flex-col md:flex-row justify-between items-center gap-4"
+  >
+    <div
+      class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left"
+    >
+      <div
+        class="font-mono text-[10px] text-neutral-500 uppercase tracking-widest"
+      >
+        {t.copyright}
+      </div>
+      <div class="hidden md:block h-3 w-px bg-line"></div>
+      <div
+        class="font-mono text-[10px] text-neutral-600 uppercase tracking-widest"
+      >
+        {t.engineered}
+      </div>
+    </div>
+
+    <nav class="flex items-center gap-6">
+      <a
+        href="https://github.com/Ap3x0s"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="font-mono text-[10px] uppercase text-neutral-400 hover:text-gold transition-colors tracking-widest"
+      >
+        {t.github}
+      </a>
+      <a
+        href="https://t.me/Ap3x0"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="font-mono text-[10px] uppercase text-neutral-400 hover:text-gold transition-colors tracking-widest"
+      >
+        {t.telegram}
+      </a>
+      <a
+        href="/rss.xml"
+        class="font-mono text-[10px] uppercase text-neutral-400 hover:text-gold transition-colors tracking-widest"
+      >
+        {t.rss}
+      </a>
+    </nav>
+  </div>
+</footer>

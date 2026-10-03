@@ -1,0 +1,153 @@
+---
+import { getCollection } from "astro:content";
+import GhostTerminal from "./GhostTerminal.tsx";
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang];
+
+const posts = (
+  await getCollection("blog", (p) => p.data.lang === lang && !p.data.draft)
+)
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString(lang === "ru" ? "ru-RU" : "en-US", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  });
+
+const href = (base: string) =>
+  lang === "ru" ? (base === "/" ? "/ru" : `/ru${base}`) : base;
+
+const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
+---
+
+<section
+  class="min-h-screen w-full flex flex-col justify-between bg-black overflow-hidden relative pb-8 px-4 md:px-10"
+>
+  <!-- Ghost Terminal Background (Desktop Only) -->
+  <div class="hidden md:block absolute top-0 right-0 w-1/2 h-full z-0">
+    <GhostTerminal client:load className="h-full w-full" />
+  </div>
+
+  <!-- Massive Hero Typography -->
+  <div class="w-full flex-1 flex flex-col select-none z-10 pt-20 md:pt-16">
+    <h1
+      class="font-display font-black uppercase text-[34vw] md:text-[14vw] leading-[0.82] text-white flex flex-col w-full mix-blend-difference"
+    >
+      <span>{t.hero.lines[0]}</span>
+      <span>{t.hero.lines[1]}</span>
+      <span>{t.hero.lines[2]}</span>
+      <span class="flex items-center">
+        {t.hero.lines[3]}
+        <span
+          class="relative -top-2 h-[0.72em] w-[0.22em] bg-gold ml-2 animate-cursor-blink block"
+        ></span>
+      </span>
+    </h1>
+
+    <!-- CTAs -->
+    <div
+      class="w-full z-20 mt-8 md:mt-0 md:absolute md:bottom-10 md:right-10 md:w-auto flex flex-col md:flex-row gap-4"
+    >
+      <a href={href("/blog")} class="block w-full md:w-auto">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap px-6 w-full h-16 md:h-14 bg-gold hover:bg-white hover:text-black text-black text-xl md:text-lg font-bold uppercase tracking-wider transition-all duration-300 border-none cursor-pointer"
+        >
+          {t.hero.ctaPrimary}
+        </button>
+      </a>
+      <a href={href("/works")} class="block w-full md:w-auto">
+        <button
+          class="inline-flex items-center justify-center whitespace-nowrap px-6 w-full h-16 md:h-14 bg-black border border-white/20 hover:border-gold hover:text-gold text-white text-xl md:text-lg font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer"
+        >
+          {t.hero.ctaSecondary}
+        </button>
+      </a>
+    </div>
+  </div>
+
+  <!-- Minimal Overlay Info (Desktop Only) -->
+  <div class="absolute bottom-10 left-10 z-10 hidden md:block">
+    <p class="font-mono text-xs text-neutral-500 uppercase max-w-[200px]">
+      {t.hero.tagline}
+    </p>
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section
+  class="w-full py-20 px-4 md:px-10 border-t border-line bg-black text-neutral-300"
+>
+  <div class="max-w-4xl">
+    <h2 class="font-mono text-gold text-sm mb-8 tracking-widest uppercase">
+      {t.homeAbout.label}
+    </h2>
+    <div
+      class="text-3xl md:text-5xl font-bold leading-tight text-white mb-8 tracking-tight"
+    >
+      <span>{t.homeAbout.title1}</span>
+      <br />
+      <span class="text-gold">{t.homeAbout.title2}</span>
+    </div>
+    <div class="space-y-6 text-lg md:text-xl leading-relaxed text-neutral-200 max-w-2xl mb-10">
+      <p>{t.homeAbout.p1}</p>
+      <p>{t.homeAbout.p2}</p>
+    </div>
+
+    <a
+      href={href("/about") + "#manifesto"}
+      class="group inline-flex items-center gap-2 text-gold hover:text-white transition-colors font-mono uppercase tracking-wider text-sm"
+    >
+      {t.homeAbout.link}
+      <span class="transform group-hover:translate-x-1 transition-transform"
+        >→</span
+      >
+    </a>
+  </div>
+</section>
+
+<!-- INCOMING SIGNAL -->
+<section
+  class="w-full pt-20 pb-40 px-4 md:px-10 border-t border-line bg-black"
+>
+  <div class="flex flex-col md:flex-row justify-between md:items-end mb-12">
+    <h2
+      class="text-[13vw] md:text-8xl font-display uppercase tracking-tighter text-neutral-800 leading-none whitespace-pre-line"
+    >
+      {t.signal.title}
+    </h2>
+    <a
+      href={href("/blog")}
+      class="self-end font-mono text-gold uppercase hover:text-white transition-colors mt-4 md:mt-0 tracking-widest text-sm"
+    >
+      {t.signal.link}
+    </a>
+  </div>
+  <div class="flex flex-col border-t border-line w-full">
+    {
+      posts.map((post) => (
+        <a
+          href={href(`/blog/${postSlug(post.id)}`)}
+          class="group flex flex-col py-8 border-b border-line hover:border-gold transition-colors w-full"
+        >
+          <div class="flex justify-between items-baseline w-full">
+            <h3 class="text-2xl md:text-5xl font-bold uppercase text-white group-hover:text-gold group-hover:translate-x-4 transition-all duration-300">
+              {post.data.title}
+            </h3>
+            <span class="font-mono text-neutral-500 text-sm hidden md:block group-hover:text-white shrink-0 ml-4">
+              {dateFmt(post.data.date)}
+            </span>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

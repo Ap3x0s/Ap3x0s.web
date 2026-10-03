@@ -1,0 +1,120 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  /* ── Palette: void black / signal gold / static white ───────────── */
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+  --color-surface: #0a0a0a;
+  --color-elevated: #141414;
+  --color-line: #262626;
+  --color-line-strong: #404040;
+  --color-muted: #737373;
+  --color-dim: #525252;
+  --color-gold: #ffc800;
+  --color-gold-bright: #ffe566;
+  --color-gold-deep: #b88a00;
+
+  /* ── Typography ─────────────────────────────────────────────────── */
+  --font-display: "Anton", "Arial Narrow", sans-serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
+
+  /* ── Motion ─────────────────────────────────────────────────────── */
+  --animate-ghost-scroll: ghost-scroll 55s linear infinite;
+  --animate-cursor-blink: cursor-blink 1.1s steps(2, start) infinite;
+  --animate-signal-pulse: signal-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes ghost-scroll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes cursor-blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes signal-pulse {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-wrap: break-word;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: #000000;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #000000;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-line);
+    border: 2px solid #000000;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-gold);
+  }
+
+  * {
+    border-color: var(--color-line);
+  }
+}
+
+@layer components {
+  .container-page {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 1rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-page {
+      padding-inline: 2.5rem;
+    }
+  }
+
+  /* Hover slide — signature interaction of the site */
+  .hover-slide {
+    transition:
+      transform 0.3s ease,
+      color 0.2s ease,
+      border-color 0.2s ease;
+  }
+  .group:hover .hover-slide {
+    transform: translateX(1rem);
+  }
+}

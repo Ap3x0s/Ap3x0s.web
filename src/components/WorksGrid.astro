@@ -1,0 +1,73 @@
+---
+import { works } from "../data/works";
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].works;
+
+const href = (base: string) =>
+  lang === "ru" ? `/ru${base}` : base;
+---
+
+<section class="container-page py-16 md:py-24">
+  <div class="mb-12">
+    <h2 class="font-mono text-gold text-sm mb-6 tracking-widest uppercase">
+      {t.label}
+    </h2>
+    <h1
+      class="text-[16vw] md:text-[10vw] font-display uppercase leading-[0.85] tracking-tighter text-white"
+    >
+      {t.title}
+    </h1>
+    <p class="font-mono text-xs text-neutral-500 uppercase mt-6 max-w-md">
+      {t.intro}
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-line border border-line">
+    {
+      works.map((work) => (
+        <a
+          href={href(`/works/${work.slug}`)}
+          class="group bg-black flex flex-col hover:bg-surface transition-colors"
+        >
+          <div class="relative aspect-[16/9] overflow-hidden bg-black">
+            <div class="absolute inset-0 opacity-25 bg-[repeating-linear-gradient(135deg,#262626_0px,#262626_1px,transparent_1px,transparent_12px)] group-hover:opacity-40 transition-opacity" />
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
+            <span class="absolute bottom-4 left-5 right-5 font-display text-[8vw] md:text-5xl uppercase leading-none text-neutral-700 group-hover:text-gold transition-colors duration-300 break-words">
+              {work.title[lang]}
+            </span>
+            <span class="absolute top-4 right-4 font-mono text-[10px] uppercase tracking-widest border border-line bg-black px-2 py-1 text-gold">
+              [{t.status[work.status]}]
+            </span>
+          </div>
+
+          <div class="p-5 md:p-6 flex flex-col flex-1 border-t border-line group-hover:border-gold transition-colors">
+            <div class="flex justify-between items-baseline gap-4">
+              <h2 class="text-xl md:text-2xl font-bold uppercase text-white group-hover:text-gold transition-colors">
+                {work.title[lang]}
+              </h2>
+              <span class="font-mono text-gold text-xs shrink-0 group-hover:translate-x-1 transition-transform">
+                {t.view} →
+              </span>
+            </div>
+            <p class="text-neutral-400 text-sm mt-2 leading-relaxed flex-1">
+              {work.subtitle[lang]}
+            </p>
+            <div class="flex flex-wrap gap-2 mt-4">
+              {work.tags.map((tag) => (
+                <span class="font-mono text-[10px] text-neutral-500 uppercase tracking-wider border border-line px-2 py-1">
+                  #{tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        </a>
+      ))
+    }
+  </div>
+</section>

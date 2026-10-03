@@ -1,0 +1,83 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  post: CollectionEntry<"blog">;
+  lang: Lang;
+}
+
+const { post, lang } = Astro.props;
+const t = dict[lang].blog;
+const { Content } = await render(post);
+
+const dateFmt = (d: Date) =>
+  d.toLocaleDateString(lang === "ru" ? "ru-RU" : "en-US", {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  });
+
+const blogHref = lang === "ru" ? "/ru/blog" : "/blog";
+
+const other: Lang = lang === "en" ? "ru" : "en";
+const otherHref =
+  other === "ru" ? `/ru/blog/${post.id.replace(/^(en|ru)\//, "")}` : `/blog/${post.id.replace(/^(en|ru)\//, "")}`;
+---
+
+<article class="container-page py-16 md:py-24 max-w-3xl">
+  <div class="flex justify-between items-center">
+    <a
+      href={blogHref}
+      class="font-mono text-sm text-gold hover:text-white transition-colors tracking-widest"
+    >
+      {t.back}
+    </a>
+    <a
+      href={otherHref}
+      class="font-mono text-xs text-neutral-500 hover:text-gold transition-colors uppercase"
+    >
+      [{other.toUpperCase()}]
+    </a>
+  </div>
+
+  <div class="font-mono text-xs text-neutral-500 uppercase tracking-widest mt-10">
+    {t.published}: <span class="text-gold">{dateFmt(post.data.date)}</span>
+  </div>
+
+  <h1
+    class="text-3xl md:text-5xl font-bold uppercase leading-tight text-white mt-4 tracking-tight"
+  >
+    {post.data.title}
+  </h1>
+
+  <div class="flex flex-wrap gap-2 mt-6 pb-8 border-b border-line">
+    {
+      post.data.tags.map((tag) => (
+        <span class="font-mono text-[10px] text-neutral-500 uppercase tracking-wider border border-line px-2 py-1">
+          #{tag}
+        </span>
+      ))
+    }
+  </div>
+
+  <div
+    class="prose prose-invert prose-lg max-w-none mt-10
+      prose-headings:uppercase prose-headings:font-bold prose-headings:tracking-tight
+      prose-h2:text-2xl prose-h3:text-xl
+      prose-h2:border-b prose-h2:border-line prose-h2:pb-2
+      prose-a:text-gold prose-a:no-underline hover:prose-a:underline
+      prose-strong:text-white prose-code:text-gold prose-code:before:content-none prose-code:after:content-none
+      prose-code:bg-elevated prose-code:px-1.5 prose-code:py-0.5 prose-code:border prose-code:border-line
+      prose-blockquote:border-gold prose-blockquote:text-neutral-200
+      prose-li:text-neutral-300 prose-p:text-neutral-300"
+  >
+    <Content />
+  </div>
+
+  <div class="border-t border-line mt-16 pt-8 flex justify-between font-mono text-xs uppercase tracking-widest">
+    <span class="text-neutral-600">AP3X0_WEB // LOG</span>
+    <span class="text-neutral-600">{post.data.lang.toUpperCase()}</span>
+  </div>
+</article>

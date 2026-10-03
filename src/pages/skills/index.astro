@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import SkillsGrid from "../../components/SkillsGrid.tsx";
+import { skills } from "../../data/skills";
+import { dict } from "../../i18n/dict";
+
+const t = dict.en.skills;
+---
+
+<BaseLayout title={t.title} description={t.intro} lang="en">
+  <SkillsGrid
+    client:load
+    items={skills}
+    lang="en"
+    labels={{
+      title: t.title,
+      label: t.label,
+      intro: t.intro,
+      all: t.all,
+      items: t.items,
+      version: t.version,
+      empty: t.empty,
+    }}
+  />
+</BaseLayout>

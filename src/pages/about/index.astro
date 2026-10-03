@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import About from "../../components/About.astro";
+import { about } from "../../data/about";
+---
+
+<BaseLayout
+  title="About"
+  description={about.en.statement.line2}
+  lang="en"
+>
+  <About lang="en" />
+</BaseLayout>

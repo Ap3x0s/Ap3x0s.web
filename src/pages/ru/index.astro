@@ -1,0 +1,11 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Home from "../../components/Home.astro";
+import { dict } from "../../i18n/dict";
+
+const t = dict.ru;
+---
+
+<BaseLayout title="Фуллстек под ключ" description={t.site.description} lang="ru">
+  <Home lang="ru" />
+</BaseLayout>

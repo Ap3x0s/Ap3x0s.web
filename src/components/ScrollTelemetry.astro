@@ -1,0 +1,80 @@
+---
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].telemetry;
+---
+
+<div
+  id="scroll-telemetry"
+  class="fixed right-4 md:right-8 z-50 cursor-pointer opacity-0 transition-opacity duration-200 pointer-events-none select-none bottom-6 md:bottom-8"
+  role="button"
+  aria-label="Scroll to top"
+>
+  <div
+    class="font-mono text-xs md:text-sm tracking-widest flex items-center gap-2 px-2 py-1 border border-line bg-black hover:border-gold hover:text-gold transition-colors group"
+  >
+    <span class="hidden md:inline group-hover:hidden text-neutral-500">
+      {t.offset}: <span id="telemetry-value">0</span>PX
+    </span>
+    <span class="hidden group-hover:inline text-gold">{t.ret}</span>
+    <span class="md:hidden text-neutral-500 group-active:text-gold">
+      ▲ <span id="telemetry-value-mobile">0</span>
+    </span>
+  </div>
+</div>
+
+<script>
+  function initTelemetry() {
+    const root = document.getElementById("scroll-telemetry");
+    const value = document.getElementById("telemetry-value");
+    const valueMobile = document.getElementById("telemetry-value-mobile");
+    if (!root || (!value && !valueMobile)) return;
+
+    let visible = false;
+    let queued = false;
+
+    const update = () => {
+      const offset = Math.abs(Math.round(window.scrollY));
+      if (value) value.textContent = String(offset);
+      if (valueMobile) valueMobile.textContent = String(offset);
+
+      if (offset > 300 && !visible) {
+        root.classList.remove("opacity-0", "pointer-events-none");
+        root.classList.add("opacity-100", "pointer-events-auto");
+        visible = true;
+      } else if (offset <= 300 && visible) {
+        root.classList.add("opacity-0", "pointer-events-none");
+        root.classList.remove("opacity-100", "pointer-events-auto");
+        visible = false;
+      }
+      queued = false;
+    };
+
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      window.requestAnimationFrame(update);
+    };
+
+    const onClick = () =>
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    root.addEventListener("click", onClick);
+    update();
+
+    const cleanup = () => {
+      window.removeEventListener("scroll", onScroll);
+      root.removeEventListener("click", onClick);
+      document.removeEventListener("astro:before-swap", cleanup);
+    };
+    document.addEventListener("astro:before-swap", cleanup);
+  }
+
+  document.addEventListener("astro:page-load", initTelemetry);
+</script>
