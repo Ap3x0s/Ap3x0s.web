@@ -34,7 +34,7 @@ export const dict = {
       title1: "Most developers write code.",
       title2: "I build systems.",
       p1: "The task is never \"build a website\". It's testing a hypothesis, shipping an MVP, wiring payments, automating what eats the team's time.",
-      p2: "My name is Evgeny (Ap3x0). Full-stack developer, ~4 years in production, from math school at VMK MSU to matchmaking platforms with RBAC/RLS.",
+      p2: "My name is Evgeny (Ap3x0). Full-stack developer, ~4 years in production: from first scripts in 2020 and math school at VMK MSU to matchmaking platforms with RBAC/RLS.",
       link: "[READ MANIFESTO]",
     },
     signal: {
@@ -129,7 +129,7 @@ export const dict = {
       title1: "Большинство пишет код.",
       title2: "Я строю системы.",
       p1: "Задача никогда не «сделать сайт». Это проверка гипотезы, запуск MVP, подключение платежей, автоматизация того, что съедает время команды.",
-      p2: "Меня зовут Евгений (Ap3x0). Full-stack разработчик, ~4 года в проде: от матшколы при ВМК МГУ до матчмейкинг-платформ с RBAC/RLS.",
+      p2: "Меня зовут Евгений (Ap3x0). Full-stack разработчик, ~4 года в проде: от первых скриптов 2020-го и матшколы при ВМК МГУ до матчмейкинг-платформ с RBAC/RLS.",
       link: "[ЧИТАТЬ МАНИФЕСТ]",
     },
     signal: {

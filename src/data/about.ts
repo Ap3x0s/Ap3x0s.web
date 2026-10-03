@@ -29,7 +29,7 @@ export const about: Record<Lang, AboutContent> = {
     },
     intro: [
       "The task is never \"build a website\". It's testing a hypothesis, shipping an MVP, wiring payments, automating what eats the team's time. Code is just the tool.",
-      "My name is Evgeny, alias Ap3x0. I'm 19, full-stack developer with ~4 years in production. I studied at the math school at VMK MSU (vector calculators, matrix math, algorithmic problems), then went full-cycle: idea → design system → front/back → payments → deploy → security audit.",
+      "My name is Evgeny, alias Ap3x0. I'm 19, full-stack developer with ~4 years in production. First code in 2020, then the math school at VMK MSU (2021–2023), School 21 by Sber (2024 — own projects there lived off GitHub, grants for participation and completion); today I study Information Security at Plekhanov University (REU). Full cycle: idea → design system → front/back → payments → deploy → security audit.",
       "I'm local-first: self-host and offline wherever possible — own Docker, Gitea, local models, offline speech recognition.",
     ],
     currentlyLabel: "CURRENTLY WORKING ON",
@@ -39,7 +39,7 @@ export const about: Record<Lang, AboutContent> = {
         items: [
           {
             name: "ASCEND.HUB",
-            note: "Competitive matchmaking platform (GTA 5 RP), with partner",
+            note: "Competitive matchmaking platform (GTA 5 RP) — the SkinHub, with partner",
           },
           { name: "TrumpVPN", note: "VPN sales service + admin panel, in operation" },
           { name: "Bio Platform", note: "Bio-link hub with own monetization stack" },
@@ -58,7 +58,11 @@ export const about: Record<Lang, AboutContent> = {
         group: "Open Source",
         items: [
           { name: "nekocli / NekoFree", note: "Local-first fork of an agent CLI, 98+ commits, MIT" },
-          { name: "Xrayebator", note: "152 commits merged upstream, 2nd contributor" },
+          {
+            name: "Xrayebator",
+            note: "117 stars, #1 contributor above the author — flagship after ASCEND.HUB; in production and still in development",
+          },
+          { name: "Open Design", note: "Contributor — accepted commits upstream" },
           { name: "Ripple-Voice", note: "Offline dictation for Windows, MIT, public releases" },
         ],
       },
@@ -70,32 +74,37 @@ export const about: Record<Lang, AboutContent> = {
         ],
       },
     ],
-    journeyLabel: "JOURNEY: FROM MATH SCHOOL TO PRODUCT THINKING",
+    journeyLabel: "JOURNEY: FROM FIRST SCRIPTS TO SHIPPED PRODUCTS",
     journey: [
       {
-        year: "2021–2022",
+        year: "2020",
         title: "First Code",
-        text: "Math school at VMK MSU: vector calculators, matrix math, algorithmic problems. Reverse engineering spirit — and a C# piano among the first builds.",
+        text: "The very first code — scripts and the start of the path. Curiosity about how things work under the hood never left.",
       },
       {
-        year: "2023",
-        title: "Web Entry",
-        text: "Full-stack from idea to production: Telegram Mini Apps, real payments, backend architecture — not just markup.",
+        year: "2021–2023",
+        title: "Math School",
+        text: "Math school at VMK MSU: two years of console development, algorithms, matrix math. Reverse-engineering spirit — and a C# piano among the first builds.",
       },
       {
         year: "2024",
-        title: "Products in Production",
-        text: "TrumpVPN and Bio Platform go live. Release deploys, migrations, monetization flows — services that survive real users.",
+        title: "School 21 & University",
+        text: "School 21 by Sber: own projects (kept off GitHub), grants for participation and completion. Same year — ЕГЭ and admission: now studying Information Security at Plekhanov University (REU).",
       },
       {
         year: "2025",
-        title: "Agent-First",
-        text: "Forked my own agent CLI, built OmniRoute, DSH with hooks and memory. Development becomes a pairing discipline with agents.",
+        title: "First Products in Production",
+        text: "TrumpVPN and Bio Platform go live. Release deploys, migrations, monetization flows — services that survive real users.",
       },
       {
         year: "2026",
-        title: "Platform Scale",
-        text: "ASCEND.HUB in production (RBAC/RLS, realtime), TGTWITCHAPP MVP, open-source upstream merges. ~60–80k lines across flagships.",
+        title: "Coding with Agents",
+        text: "Paired and solo coding with agents: own DSH harness with hooks and memory, OmniRoute gateway, own skills. Development becomes a discipline of pairing.",
+      },
+      {
+        year: "2026",
+        title: "Flagships",
+        text: "Xrayebator — one of the main projects after ASCEND.HUB (the SkinHub): 117 stars, #1 contributor above the author; still in development, already in production. A contributor to Open Design.",
       },
     ],
     approachLabel: "APPROACH: NOT AN EXECUTOR, A PARTNER",
@@ -190,7 +199,7 @@ export const about: Record<Lang, AboutContent> = {
     },
     intro: [
       "Задача никогда не «сделать сайт». Это проверка гипотезы, запуск MVP, подключение платежей, автоматизация того, что съедает время команды. Код — просто инструмент.",
-      "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде. Учился в матшколе при ВМК МГУ (векторные калькуляторы, матричные вычисления, алгоритмические задачи), затем — полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
+      "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде. Первый код — 2020, затем матшкола при ВМК МГУ (2021–2023), Школа 21 от Сбера (2024 — свои проекты там жили вне GitHub, гранты за участие и прохождение), а сейчас — учусь на информационной безопасности в РЭУ им. Г.В. Плеханова. Дальше — полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
       "Локально-фёрст: где возможно — self-host и офлайн (свой Docker, Gitea, локальные модели, офлайн-распознавание речи).",
     ],
     currentlyLabel: "СЕЙЧАС РАБОТАЮ НАД",
@@ -200,7 +209,7 @@ export const about: Record<Lang, AboutContent> = {
         items: [
           {
             name: "ASCEND.HUB",
-            note: "Киберспортивная платформа матчмейкинга (GTA 5 RP), с партнёром",
+            note: "Киберспортивная платформа матчмейкинга (GTA 5 RP) — «скинхаб», с партнёром",
           },
           { name: "TrumpVPN", note: "Сервис продажи VPN + админ-панель, в эксплуатации" },
           { name: "Bio Platform", note: "Bio-link хаб со своей стекой монетизации" },
@@ -219,7 +228,11 @@ export const about: Record<Lang, AboutContent> = {
         group: "Open Source",
         items: [
           { name: "nekocli / NekoFree", note: "Локально-фёрст форк агентского CLI, 98+ коммитов, MIT" },
-          { name: "Xrayebator", note: "152 коммита в апстриме, второй контрибьютор" },
+          {
+            name: "Xrayebator",
+            note: "117 звёзд, #1 контрибьютор — выше автора; флагман после ASCEND.HUB, в проде и в разработке",
+          },
+          { name: "Open Design", note: "Контрибьютор — принятые коммиты в апстриме" },
           { name: "Ripple-Voice", note: "Офлайн-диктовка для Windows, MIT, публичные релизы" },
         ],
       },
@@ -231,32 +244,37 @@ export const about: Record<Lang, AboutContent> = {
         ],
       },
     ],
-    journeyLabel: "ПУТЬ: ОТ МАТШКОЛЫ К ПРОДУКТОВОМУ МЫШЛЕНИЮ",
+    journeyLabel: "ПУТЬ: ОТ ПЕРВЫХ СКРИПТОВ К ПРОДУКТАМ В ПРОДЕ",
     journey: [
       {
-        year: "2021–2022",
+        year: "2020",
         title: "Первый код",
-        text: "Матшкола при ВМК МГУ: векторные калькуляторы, матричные вычисления, алгоритмы. Дух реверс-инженерии — и C#-пианино среди первых построек.",
+        text: "Самый первый код — скрипты и начало пути. Любопытство «как это устроено под капотом» не оставило меня с тех пор.",
       },
       {
-        year: "2023",
-        title: "Вход в веб",
-        text: "Фуллстек «от идеи до продакшна»: Telegram Mini Apps, реальные платежи, архитектура бэкенда — не просто вёрстка.",
+        year: "2021–2023",
+        title: "ВМШ",
+        text: "Высшая математическая школа при ВМК МГУ: два года консольной разработки, алгоритмы, матричные вычисления. Дух реверс-инженерии — и C#-пианино среди первых построек.",
       },
       {
         year: "2024",
-        title: "Продукты в проде",
-        text: "TrumpVPN и Bio Platform выходят в прод. Релиз-деплои, миграции, платёжные флоу — сервисы, которые переживают реальных пользователей.",
+        title: "Школа 21 и поступление",
+        text: "Школа 21 от Сбера: собственные проекты (вне GitHub), гранты за участие и прохождение. В том же году — ЕГЭ и поступление: сейчас учусь на информационной безопасности в РЭУ им. Г.В. Плеханова.",
       },
       {
         year: "2025",
-        title: "Agent-first",
-        text: "Свой форк агентского CLI, OmniRoute, DSH с хуками и памятью. Разработка становится дисциплиной пейринга с агентами.",
+        title: "Первые продукты в проде",
+        text: "TrumpVPN и Bio Platform выходят в прод. Релиз-деплои, миграции, платёжные флоу — сервисы, которые переживают реальных пользователей.",
       },
       {
         year: "2026",
-        title: "Масштаб платформ",
-        text: "ASCEND.HUB в проде (RBAC/RLS, realtime), MVP TGTWITCHAPP, мержи в open-source апстримы. ~60–80k строк в трёх флагманах.",
+        title: "Кодинг с агентами",
+        text: "Совместный и самостоятельный кодинг с агентами: свой харнес DSH с хуками и памятью, гейтвей OmniRoute, свои скиллы. Разработка становится дисциплиной пейринга.",
+      },
+      {
+        year: "2026",
+        title: "Флагманы",
+        text: "Xrayebator — один из главных проектов после ASCEND.HUB («скинхаба»): 117 звёзд, #1 контрибьютор — выше автора; всё ещё в разработке, но уже в продакшене. И контрибьютор Open Design.",
       },
     ],
     approachLabel: "ПОДХОД: НЕ ИСПОЛНИТЕЛЬ, А ПАРТНЁР",
