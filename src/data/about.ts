@@ -28,9 +28,13 @@ export const about: Record<Lang, AboutContent> = {
       line2: "I build systems.",
     },
     intro: [
-      "The task is never \"build a website\". It's testing a hypothesis, shipping an MVP, wiring payments, automating what eats the team's time. Code is just the tool.",
-      "My name is Evgeny, alias Ap3x0. I'm 19, full-stack developer with ~4 years in production. First code in 2020, then the math school at VMK MSU (2021–2023), School 21 by Sber (2024 — own projects there lived off GitHub, grants for participation and completion); today I study Information Security at Plekhanov University (REU). Full cycle: idea → design system → front/back → payments → deploy → security audit.",
-      "I'm local-first: self-host and offline wherever possible — own Docker, Gitea, local models, offline speech recognition.",
+      "I'm a full-stack developer passionate about crafting flawless products that solve real problems. Learning and understanding something new — that's what drives me. Growth isn't optional, it's everything.",
+      "My name is Evgeny, alias Ap3x0. I'm 19, a full-stack developer with ~4 years in production: first code in 2020, math school at VMK MSU (2021–2023), School 21 by Sber (2024 — own projects there lived off GitHub, grants for participation and completion); today I study Information Security at Plekhanov University (REU). Full cycle: idea → design system → front/back → payments → deploy → security audit.",
+      "I'm genuinely passionate about technology. The entire tech ecosystem fascinates me — from infrastructure and backend systems to sleek, thoughtful design. I love the scale of it all, the complexity, the possibility of creating something that impacts real people. There's something beautiful about automating away the mundane and building systems that just work.",
+      "I love the entire journey from idea to production. There's something magical about watching a concept transform into a real, breathing product — the design coming to life, the backend handling real traffic, security and infrastructure working in harmony. It's not just about the work; it's about witnessing the vision become reality.",
+      "I really enjoy leading and working alongside talented people. There's a unique energy in being part of a strong team: communicating and collaborating through challenges, working through the tough moments together, building something meaningful as one unit. Great teams elevate everything — code quality, morale, the final product. What matters most is being surrounded by people who genuinely care — not just about the work, but about the craft, about technology itself.",
+      "Always learning. Always shipping. Always grinding.",
+      "💬 Languages: Русский (Native) · English (Fluent) · Tech stack speaks for itself",
     ],
     currentlyLabel: "CURRENTLY WORKING ON",
     currently: [
@@ -40,6 +44,10 @@ export const about: Record<Lang, AboutContent> = {
           {
             name: "ASCEND.HUB",
             note: "Competitive matchmaking platform (GTA 5 RP) — the SkinHub, with partner",
+          },
+          {
+            name: "Xrayebator",
+            note: "Actively maintained — weekly and daily updates, real users in production",
           },
           { name: "TrumpVPN", note: "VPN sales service + admin panel, in operation" },
           { name: "Bio Platform", note: "Bio-link hub with own monetization stack" },
@@ -51,6 +59,10 @@ export const about: Record<Lang, AboutContent> = {
           {
             name: "TGTWITCHAPP",
             note: "Twitch activity marketplace — MVP ready, backend in progress",
+          },
+          {
+            name: "Xrayebator",
+            note: "Constantly evolving — new features and releases rolling out",
           },
         ],
       },
@@ -89,7 +101,7 @@ export const about: Record<Lang, AboutContent> = {
       {
         year: "2024",
         title: "School 21 & University",
-        text: "School 21 by Sber: own projects (kept off GitHub), grants for participation and completion. Same year — ЕГЭ and admission: now studying Information Security at Plekhanov University (REU).",
+        text: "School 21 by Sber: own projects (kept off GitHub), grants for participation and completion. Same year — ЕГЭ and admission to Plekhanov University (REU), Information Security.",
       },
       {
         year: "2025",
@@ -98,8 +110,8 @@ export const about: Record<Lang, AboutContent> = {
       },
       {
         year: "2026",
-        title: "Coding with Agents",
-        text: "Paired and solo coding with agents: own DSH harness with hooks and memory, OmniRoute gateway, own skills. Development becomes a discipline of pairing.",
+        title: "Programming, Learning & Automation",
+        text: "Paired and solo coding with agents: own DSH harness with hooks and memory, personal OmniRoute gateway, own skills plus server and deployment automation. Development becomes part of free time — building Xrayebator and ASCEND.HUB, pushing to Open Design, and continuing work on TrumpVPN.",
       },
       {
         year: "2026",
@@ -198,9 +210,13 @@ export const about: Record<Lang, AboutContent> = {
       line2: "Я строю системы.",
     },
     intro: [
-      "Задача никогда не «сделать сайт». Это проверка гипотезы, запуск MVP, подключение платежей, автоматизация того, что съедает время команды. Код — просто инструмент.",
-      "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде. Первый код — 2020, затем матшкола при ВМК МГУ (2021–2023), Школа 21 от Сбера (2024 — свои проекты там жили вне GitHub, гранты за участие и прохождение), а сейчас — учусь на информационной безопасности в РЭУ им. Г.В. Плеханова. Дальше — полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
-      "Локально-фёрст: где возможно — self-host и офлайн (свой Docker, Gitea, локальные модели, офлайн-распознавание речи).",
+      "Я full-stack разработчик, который создаёт безупречные продукты, решающие реальные задачи. Узнавать и понимать что-то новое — вот что меня двигает. Рост — не опция, а всё.",
+      "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде: первый код — 2020, затем матшкола при ВМК МГУ (2021–2023), Школа 21 от Сбера (2024 — свои проекты там жили вне GitHub, гранты за участие и прохождение), а учёба — на информационной безопасности в РЭУ им. Г.В. Плеханова. Дальше — полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
+      "Я по-настоящему увлечён технологиями. Вся технологическая экосистема меня завораживает — от инфраструктуры и бэкенд-систем до лаконичного, продуманного дизайна. Я люблю масштаб всего этого, сложность, возможность создавать то, что влияет на реальных людей. В автоматизации рутины и системах, которые просто работают, есть своя красота.",
+      "Я люблю весь путь от идеи до продакшна. Волшебно наблюдать, как концепция превращается в живой продукт — как оживает дизайн, как бэкенд держит реальный трафик, как безопасность и инфраструктура работают в гармонии. Дело не только в самой работе — а в том, как видишь, как замысел становится реальностью.",
+      "Мне нравится вести за собой и работать рядом с талантливыми людьми. В сильной команде есть особая энергия: обсуждать и преодолевать сложности вместе, проходить тяжёлые моменты сообща, строить что-то значимое как единое целое. Команда поднимает всё: качество кода, настроение, финальный продукт. Главное — быть среди тех, кому не всё равно: до дела, до ремесла, до технологий самих по себе.",
+      "Всегда учусь. Всегда вывожу в прод. Всегда в деле.",
+      "💬 Языки: Русский (Native) · English (Fluent) · Стек говорит сам за себя",
     ],
     currentlyLabel: "СЕЙЧАС РАБОТАЮ НАД",
     currently: [
@@ -210,6 +226,10 @@ export const about: Record<Lang, AboutContent> = {
           {
             name: "ASCEND.HUB",
             note: "Киберспортивная платформа матчмейкинга (GTA 5 RP) — «скинхаб», с партнёром",
+          },
+          {
+            name: "Xrayebator",
+            note: "Еженедельные, а то и ежедневные обновления — работает, люди пользуются",
           },
           { name: "TrumpVPN", note: "Сервис продажи VPN + админ-панель, в эксплуатации" },
           { name: "Bio Platform", note: "Bio-link хаб со своей стекой монетизации" },
@@ -221,6 +241,10 @@ export const about: Record<Lang, AboutContent> = {
           {
             name: "TGTWITCHAPP",
             note: "Маркетплейс Twitch-активности — MVP готов, бэкенд в процессе",
+          },
+          {
+            name: "Xrayebator",
+            note: "Постоянно в работе — новые фичи и релизы",
           },
         ],
       },
@@ -259,7 +283,7 @@ export const about: Record<Lang, AboutContent> = {
       {
         year: "2024",
         title: "Школа 21 и поступление",
-        text: "Школа 21 от Сбера: собственные проекты (вне GitHub), гранты за участие и прохождение. В том же году — ЕГЭ и поступление: сейчас учусь на информационной безопасности в РЭУ им. Г.В. Плеханова.",
+        text: "Школа 21 от Сбера: собственные проекты (вне GitHub), гранты за участие и прохождение. В том же году — ЕГЭ и поступление в РЭУ им. Г.В. Плеханова на информационную безопасность.",
       },
       {
         year: "2025",
@@ -268,8 +292,8 @@ export const about: Record<Lang, AboutContent> = {
       },
       {
         year: "2026",
-        title: "Кодинг с агентами",
-        text: "Совместный и самостоятельный кодинг с агентами: свой харнес DSH с хуками и памятью, гейтвей OmniRoute, свои скиллы. Разработка становится дисциплиной пейринга.",
+        title: "Программирование, изучение технологий и автоматизации",
+        text: "Совместный и самостоятельный кодинг с агентами: свой харнес DSH с хуками и памятью, личный гейтвей OmniRoute, свои скиллы и автоматизации серверов и развёртки. Разработка становится частью свободного времени: создание Xrayebator и ASCEND.HUB, пуш в Open Design и продолжение работы над TrumpVPN.",
       },
       {
         year: "2026",
