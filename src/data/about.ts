@@ -29,10 +29,10 @@ export const about: Record<Lang, AboutContent> = {
     },
     intro: [
       "I'm a full-stack developer passionate about crafting flawless products that solve real problems. Learning and understanding something new — that's what drives me. Growth isn't optional, it's everything.",
-      "My name is Evgeny, alias Ap3x0. I'm 19, a full-stack developer with ~4 years in production: first code in 2020, math school at VMK MSU (2021–2023), School 21 by Sber (2024 — own projects there lived off GitHub, grants for participation and completion); today I study Information Security at Plekhanov University (REU). Full cycle: idea → design system → front/back → payments → deploy → security audit.",
-      "I'm genuinely passionate about technology. The entire tech ecosystem fascinates me — from infrastructure and backend systems to sleek, thoughtful design. I love the scale of it all, the complexity, the possibility of creating something that impacts real people. There's something beautiful about automating away the mundane and building systems that just work.",
-      "I love the entire journey from idea to production. There's something magical about watching a concept transform into a real, breathing product — the design coming to life, the backend handling real traffic, security and infrastructure working in harmony. It's not just about the work; it's about witnessing the vision become reality.",
-      "I really enjoy leading and working alongside talented people. There's a unique energy in being part of a strong team: communicating and collaborating through challenges, working through the tough moments together, building something meaningful as one unit. Great teams elevate everything — code quality, morale, the final product. What matters most is being surrounded by people who genuinely care — not just about the work, but about the craft, about technology itself.",
+      "My name is Evgeny, alias Ap3x0. I'm 19, a full-stack developer with ~4 years in production. Full cycle: idea → design system → front/back → payments → deploy → security audit.",
+      "I'm genuinely passionate about technology — from infrastructure and backend systems to sleek, thoughtful design. I love the scale of it all, the complexity, the possibility of creating something that impacts real people. Automating away the mundane and building systems that just work — that's beauty.",
+      "I love the whole journey from idea to production: watching a concept become a real, breathing product — design coming to life, backend handling real traffic, security and infrastructure in harmony. It's not just about the work; it's about witnessing the vision become reality.",
+      "I enjoy leading and working alongside talented people. Great teams elevate everything — code quality, morale, the final product. What matters most is being surrounded by people who genuinely care — about the craft, about technology itself.",
       "Always learning. Always shipping. Always grinding.",
       "💬 Languages: Русский (Native) · English (Fluent) · Tech stack speaks for itself",
     ],
@@ -116,7 +116,7 @@ export const about: Record<Lang, AboutContent> = {
       {
         year: "2026",
         title: "Flagships",
-        text: "Xrayebator — one of the main projects after ASCEND.HUB (the SkinHub): 117 stars, #1 contributor above the author; still in development, already in production. A contributor to Open Design.",
+        text: "Xrayebator — one of the main projects after ASCEND.HUB: 117 stars, #1 contributor above the author; still in development, already in production. A contributor to Open Design.",
       },
     ],
     approachLabel: "APPROACH: NOT AN EXECUTOR, A PARTNER",
@@ -130,8 +130,8 @@ export const about: Record<Lang, AboutContent> = {
         text: "My job is to save the business money and time, not to rack up development hours.",
       },
       {
-        title: "3. Take responsibility",
-        text: "I'm at the meeting myself. I make architectural decisions myself. I'm responsible for the result.",
+        title: "3. Own the outcome",
+        text: "Meetings, architecture, the final result — all on me. No hiding behind anyone, no pushing the problem further: I make the call, I live with it.",
       },
       {
         title: "4. Think like a product owner",
@@ -170,8 +170,8 @@ export const about: Record<Lang, AboutContent> = {
     metrics: [
       { value: "4 yrs", label: "in production at 19" },
       { value: "60–80k", label: "lines across 3 flagships" },
-      { value: "15", label: "GitHub repositories" },
-      { value: "2", label: "live production services" },
+      { value: "117★", label: "Xrayebator — #1 contributor" },
+      { value: "4", label: "products in production" },
     ],
     workLabel: "HOW I WORK",
     work: [
@@ -211,10 +211,10 @@ export const about: Record<Lang, AboutContent> = {
     },
     intro: [
       "Я full-stack разработчик, который создаёт безупречные продукты, решающие реальные задачи. Узнавать и понимать что-то новое — вот что меня двигает. Рост — не опция, а всё.",
-      "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде: первый код — 2020, затем матшкола при ВМК МГУ (2021–2023), Школа 21 от Сбера (2024 — свои проекты там жили вне GitHub, гранты за участие и прохождение), а учёба — на информационной безопасности в РЭУ им. Г.В. Плеханова. Дальше — полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
-      "Я по-настоящему увлечён технологиями. Вся технологическая экосистема меня завораживает — от инфраструктуры и бэкенд-систем до лаконичного, продуманного дизайна. Я люблю масштаб всего этого, сложность, возможность создавать то, что влияет на реальных людей. В автоматизации рутины и системах, которые просто работают, есть своя красота.",
-      "Я люблю весь путь от идеи до продакшна. Волшебно наблюдать, как концепция превращается в живой продукт — как оживает дизайн, как бэкенд держит реальный трафик, как безопасность и инфраструктура работают в гармонии. Дело не только в самой работе — а в том, как видишь, как замысел становится реальностью.",
-      "Мне нравится вести за собой и работать рядом с талантливыми людьми. В сильной команде есть особая энергия: обсуждать и преодолевать сложности вместе, проходить тяжёлые моменты сообща, строить что-то значимое как единое целое. Команда поднимает всё: качество кода, настроение, финальный продукт. Главное — быть среди тех, кому не всё равно: до дела, до ремесла, до технологий самих по себе.",
+      "Меня зовут Евгений, ник Ap3x0. Мне 19, full-stack разработчик, ~4 года в проде. Полный цикл: идея → дизайн-система → фронт/бэк → платежи → деплой → аудит безопасности.",
+      "Я по-настоящему увлечён технологиями — от инфраструктуры и бэкенд-систем до лаконичного, продуманного дизайна. Люблю масштаб всего этого, сложность и возможность создавать то, что влияет на реальных людей. Автоматизация рутины и системы, которые просто работают, — в этом есть красота.",
+      "Люблю весь путь от идеи до продакшна: как концепция превращается в живой продукт — оживает дизайн, бэкенд держит реальный трафик, безопасность и инфраструктура работают в гармонии. Дело не только в работе — а в том, как замысел становится реальностью.",
+      "Мне нравится вести за собой и работать рядом с талантливыми людьми. Сильная команда поднимает всё: качество кода, настроение, финальный продукт. Главное — быть среди тех, кому не всё равно: до ремесла, до технологий.",
       "Всегда учусь. Всегда вывожу в прод. Всегда в деле.",
       "💬 Языки: Русский (Native) · English (Fluent) · Стек говорит сам за себя",
     ],
@@ -298,7 +298,7 @@ export const about: Record<Lang, AboutContent> = {
       {
         year: "2026",
         title: "Флагманы",
-        text: "Xrayebator — один из главных проектов после ASCEND.HUB («скинхаба»): 117 звёзд, #1 контрибьютор — выше автора; всё ещё в разработке, но уже в продакшене. И контрибьютор Open Design.",
+        text: "Xrayebator — один из главных проектов после ASCEND.HUB: 117 звёзд, #1 контрибьютор — выше автора; всё ещё в разработке, но уже в продакшене. И контрибьютор Open Design.",
       },
     ],
     approachLabel: "ПОДХОД: НЕ ИСПОЛНИТЕЛЬ, А ПАРТНЁР",
@@ -312,8 +312,8 @@ export const about: Record<Lang, AboutContent> = {
         text: "Моя задача — сэкономить бизнесу деньги и время, а не наполнять часами разработки.",
       },
       {
-        title: "3. Взять ответственность",
-        text: "На митинге — сам. Архитектурные решения — сам. Отвечаю за результат.",
+        title: "3. Ответственность без «это не я»",
+        text: "Встречи, архитектура, итог — всё на мне. Не прячусь за другими и не перекидываю проблемы дальше: принял решение — живу с ним.",
       },
       {
         title: "4. Мыслить как продукт-овнер",
@@ -352,8 +352,8 @@ export const about: Record<Lang, AboutContent> = {
     metrics: [
       { value: "4 года", label: "в проде в 19 лет" },
       { value: "60–80k", label: "строк в трёх флагманах" },
-      { value: "15", label: "репозиториев на GitHub" },
-      { value: "2", label: "прод-сервиса в эксплуатации" },
+      { value: "117★", label: "Xrayebator — #1 контрибьютор" },
+      { value: "4", label: "продукта в эксплуатации" },
     ],
     workLabel: "КАК Я РАБОТАЮ",
     work: [
