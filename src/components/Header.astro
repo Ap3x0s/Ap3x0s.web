@@ -56,6 +56,7 @@ function isActive(base: string): boolean {
         navItems.slice(1).map((item) => (
           <a
             href={href(item.base)}
+            aria-current={isActive(item.base) ? "page" : undefined}
             class:list={[
               "text-sm font-mono uppercase transition-colors",
               isActive(item.base)

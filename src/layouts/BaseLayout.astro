@@ -59,8 +59,9 @@ const fullTitle = `${title} ${t.site.titleSuffix}`;
   <body
     class="min-h-screen flex flex-col bg-background text-foreground font-sans antialiased"
   >
+    <a href="#main" class="skip-link">Skip to content</a>
     <Header lang={lang} />
-    <main class="flex-1 relative pt-24 md:pt-28">
+    <main id="main" class="flex-1 relative pt-24 md:pt-28">
       <slot />
     </main>
     <Footer lang={lang} />
