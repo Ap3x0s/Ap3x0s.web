@@ -10,7 +10,7 @@ export async function GET(context: APIContext) {
   return rss({
     title: "AP3X0_WEB // LOG",
     description:
-      "Full-stack products under key. Local-first infrastructure & agent-driven engineering.",
+      "Full-stack products, end to end. Local-first infrastructure & agent-driven engineering.",
     site: context.site ?? "https://ap3x0s.github.io",
     items: posts.map((post) => ({
       title: post.data.title,

@@ -6,7 +6,7 @@ export const dict = {
       name: "Ap3x0",
       titleSuffix: "| AP3X0_WEB",
       description:
-        "Full-stack products under key. Local-first infrastructure, agent-driven engineering.",
+        "Full-stack products, end to end. Local-first infrastructure, agent-driven engineering.",
     },
     nav: {
       root: "ROOT",
@@ -25,7 +25,7 @@ export const dict = {
     hero: {
       lines: ["BUILD", "SHIP", "OWN THE", "STACK"],
       tagline:
-        "Full-stack products under key. Local-first infrastructure & agent-driven engineering.",
+        "Full-stack products, end to end. Local-first infrastructure & agent-driven engineering.",
       ctaPrimary: "READ LATEST",
       ctaSecondary: "VIEW WORKS",
     },
