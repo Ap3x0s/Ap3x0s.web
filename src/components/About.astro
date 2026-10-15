@@ -216,3 +216,23 @@ const t = dict[lang];
     SYSTEM_UPDATE: OCT_2026 // AUTHOR: AP3X0
   </div>
 </section>
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Evgeny Kantor",
+    alternateName: "Ap3x0",
+    jobTitle: "Full-stack Developer",
+    url: Astro.site?.href ?? "https://ap3x0s.github.io",
+    sameAs: ["https://github.com/Ap3x0s", "https://t.me/Ap3x0"],
+    knowsAbout: [
+      "Full-stack development",
+      "Backend infrastructure",
+      "Security auditing",
+      "Local-first systems",
+    ],
+  })}
+>
+</script>
