@@ -72,6 +72,7 @@ function isActive(base: string): boolean {
       <div class="border-l border-white/20 h-4 mx-2"></div>
       <a
         href={localizePath(path, "en")}
+        aria-label="English version"
         class:list={[
           "text-xs font-mono uppercase transition-colors",
           lang === "en" ? "text-gold" : "text-neutral-500 hover:text-white",
@@ -79,6 +80,7 @@ function isActive(base: string): boolean {
       >
       <a
         href={localizePath(path, "ru")}
+        aria-label="Русская версия"
         class:list={[
           "text-xs font-mono uppercase transition-colors",
           lang === "ru" ? "text-gold" : "text-neutral-500 hover:text-white",
@@ -90,11 +92,13 @@ function isActive(base: string): boolean {
       <div class="flex gap-2 text-xs font-mono uppercase">
         <a
           href={localizePath(path, "en")}
+          aria-label="English version"
           class={lang === "en" ? "text-gold" : "text-neutral-500"}>EN</a
         >
         <span class="text-neutral-700">/</span>
         <a
           href={localizePath(path, "ru")}
+          aria-label="Русская версия"
           class={lang === "ru" ? "text-gold" : "text-neutral-500"}>RU</a
         >
       </div>
