@@ -44,6 +44,8 @@ export default function MobileMenu({ items, labels }: Props) {
       <button
         type="button"
         onClick={() => setOpen(true)}
+        aria-expanded={open}
+        aria-haspopup="true"
         className="text-white font-mono uppercase text-sm tracking-widest hover:text-gold transition-colors"
       >
         [ {labels.menu} ]
