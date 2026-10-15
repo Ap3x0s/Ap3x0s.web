@@ -23,9 +23,10 @@ const dateFmt = (d: Date) =>
 const blogHref = lang === "ru" ? "/ru/blog" : "/blog";
 const worksHref = lang === "ru" ? "/ru/works" : "/works";
 
-const postSlug = post.id.replace(/^(en|ru)\//, "");
+const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
+const slug = postSlug(post.id);
 const relatedWork = works.find((w) =>
-  w.relatedPosts?.includes(postSlug),
+  w.relatedPosts?.includes(slug),
 );
 
 const all = (
@@ -37,7 +38,7 @@ const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : undefined;
 
 const other: Lang = lang === "en" ? "ru" : "en";
 const otherHref =
-  other === "ru" ? `/ru/blog/${postSlug}` : `/blog/${postSlug}`;
+  other === "ru" ? `/ru/blog/${slug}` : `/blog/${slug}`;
 ---
 
 <article class="container-page py-16 md:py-24 max-w-3xl">
