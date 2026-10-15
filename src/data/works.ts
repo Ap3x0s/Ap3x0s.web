@@ -3,6 +3,7 @@ export interface Work {
   status: "production" | "mvp" | "oss" | "wip";
   tags: string[];
   repo?: string;
+  relatedPosts?: string[];
   title: { en: string; ru: string };
   subtitle: { en: string; ru: string };
   problem: { en: string; ru: string };
@@ -16,6 +17,7 @@ export const works: Work[] = [
     slug: "tgtwitchapp",
     status: "mvp",
     tags: ["Telegram", "Payments", "Highload"],
+    relatedPosts: ["cso-audit"],
     title: { en: "TGTWITCHAPP", ru: "TGTWITCHAPP" },
     subtitle: {
       en: "Smart Twitch Bots — Telegram Mini App",
@@ -132,6 +134,7 @@ export const works: Work[] = [
     slug: "nekocli",
     status: "oss",
     tags: ["CLI", "AI", "Fork"],
+    relatedPosts: ["nekocli-fork"],
     title: { en: "nekocli / NekoFree", ru: "nekocli / NekoFree" },
     subtitle: {
       en: "Own agent CLI, forked & rebuilt",
@@ -180,6 +183,7 @@ export const works: Work[] = [
     slug: "omniroute",
     status: "production",
     tags: ["AI", "Docker", "Gateway"],
+    relatedPosts: ["omniroute-gateway"],
     title: { en: "OmniRoute Gateway", ru: "OmniRoute Gateway" },
     subtitle: {
       en: "Single point for all models",

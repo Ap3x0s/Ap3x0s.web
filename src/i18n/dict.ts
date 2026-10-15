@@ -62,6 +62,7 @@ export const dict = {
     works: {
       title: "Works",
       label: "// SELECTED PROJECTS",
+      relatedLabel: "// FROM THE LOG",
       intro:
         "Problems with an asterisk — the ones Stack Overflow doesn't answer.",
       back: "[ ← ALL WORKS ]",
@@ -81,6 +82,7 @@ export const dict = {
       title: "Log.",
       label: "// DATA ARCHIVE",
       taggedLabel: "// TAGGED",
+      workLabel: "// CASE",
       back: "[ ← ALL ENTRIES ]",
       published: "PUBLISHED",
       tags: "TAGS",
@@ -171,6 +173,7 @@ export const dict = {
     works: {
       title: "Работы",
       label: "// ИЗБРАННЫЕ ПРОЕКТЫ",
+      relatedLabel: "// ИЗ ЛОГА",
       intro: "Задачи со звёздочкой — на которые нет ответа на Stack Overflow.",
       back: "[ ← ВСЕ РАБОТЫ ]",
       problem: "// ЗАДАЧА",
@@ -189,6 +192,7 @@ export const dict = {
       title: "Лог.",
       label: "// АРХИВ ДАННЫХ",
       taggedLabel: "// С ТЕГОМ",
+      workLabel: "// КЕЙС",
       back: "[ ← ВСЕ ЗАПИСИ ]",
       published: "ОПУБЛИКОВАНО",
       tags: "ТЕГИ",

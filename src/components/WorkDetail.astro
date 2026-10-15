@@ -1,6 +1,7 @@
 ---
 import type { Work } from "../data/works";
 import { dict, type Lang } from "../i18n/dict";
+import { getCollection } from "astro:content";
 
 interface Props {
   work: Work;
@@ -11,6 +12,17 @@ const { work, lang } = Astro.props;
 const t = dict[lang].works;
 
 const worksHref = lang === "ru" ? "/ru/works" : "/works";
+const blogHref = lang === "ru" ? "/ru/blog" : "/blog";
+
+const related = work.relatedPosts?.length
+  ? (
+      await getCollection("blog", (p) => p.data.lang === lang && !p.data.draft)
+    ).filter((p) =>
+      work.relatedPosts!.includes(p.id.replace(/^(en|ru)\//, "")),
+    )
+  : [];
+
+const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
 ---
 
 <section class="container-page py-16 md:py-24 max-w-5xl">
@@ -91,6 +103,31 @@ const worksHref = lang === "ru" ? "/ru/works" : "/works";
       >
         [GITHUB] <span class="group-hover:translate-x-1">→</span>
       </a>
+    )
+  }
+
+  {
+    related.length > 0 && (
+      <div class="border-t border-line mt-14 pt-10">
+        <h2 class="font-mono text-gold text-xs tracking-widest uppercase mb-6">
+          {t.relatedLabel}
+        </h2>
+        <div class="flex flex-col">
+          {related.map((post) => (
+            <a
+              href={`${blogHref}/${postSlug(post.id)}`}
+              class="group flex items-baseline justify-between gap-4 py-4 border-b border-line hover:border-gold transition-colors"
+            >
+              <span class="text-lg md:text-2xl font-bold uppercase text-white group-hover:text-gold transition-colors">
+                {post.data.title}
+              </span>
+              <span class="font-mono text-xs text-neutral-500 group-hover:text-gold transition-colors shrink-0">
+                →
+              </span>
+            </a>
+          ))}
+        </div>
+      </div>
     )
   }
 </section>

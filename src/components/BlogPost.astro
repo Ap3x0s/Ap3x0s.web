@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 import { dict, type Lang } from "../i18n/dict";
+import { works } from "../data/works";
 
 interface Props {
   post: CollectionEntry<"blog">;
@@ -20,10 +21,16 @@ const dateFmt = (d: Date) =>
   });
 
 const blogHref = lang === "ru" ? "/ru/blog" : "/blog";
+const worksHref = lang === "ru" ? "/ru/works" : "/works";
+
+const postSlug = post.id.replace(/^(en|ru)\//, "");
+const relatedWork = works.find((w) =>
+  w.relatedPosts?.includes(postSlug),
+);
 
 const other: Lang = lang === "en" ? "ru" : "en";
 const otherHref =
-  other === "ru" ? `/ru/blog/${post.id.replace(/^(en|ru)\//, "")}` : `/blog/${post.id.replace(/^(en|ru)\//, "")}`;
+  other === "ru" ? `/ru/blog/${postSlug}` : `/blog/${postSlug}`;
 ---
 
 <article class="container-page py-16 md:py-24 max-w-3xl">
@@ -64,6 +71,27 @@ const otherHref =
       ))
     }
   </div>
+
+  {
+    relatedWork && (
+      <a
+        href={`${worksHref}/${relatedWork.slug}`}
+        class="group flex items-center justify-between gap-4 mt-8 border border-line p-5 hover:border-gold transition-colors"
+      >
+        <span>
+          <span class="font-mono text-xs text-gold tracking-widest block mb-2">
+            {t.workLabel}
+          </span>
+          <span class="text-xl font-bold uppercase text-white group-hover:text-gold transition-colors">
+            {relatedWork.title[lang]}
+          </span>
+        </span>
+        <span class="font-mono text-xs text-neutral-500 group-hover:text-gold transition-colors shrink-0">
+          →
+        </span>
+      </a>
+    )
+  }
 
   <div
     class="prose prose-invert prose-lg max-w-none mt-10
