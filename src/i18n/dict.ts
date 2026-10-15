@@ -13,7 +13,6 @@ export const dict = {
       works: "WORKS",
       about: "ABOUT",
       log: "LOG",
-      skills: "SKILLS",
       contacts: "CONTACTS",
     },
     menu: {
@@ -88,17 +87,6 @@ export const dict = {
       minutes: "MIN",
       related: "// MORE SIGNAL",
     },
-    skills: {
-      title: "Skills.",
-      label: "// AGENT ARSENAL",
-      intro:
-        "Custom skills, hooks and tooling that power my development pipeline.",
-      all: "ALL",
-      items: "MODULES",
-      version: "VER",
-      lang: "STACK",
-      empty: "NO MODULES IN THIS CATEGORY",
-    },
     aboutPage: {
       label: "// MANIFESTO",
       back: "[ ← ROOT ]",
@@ -133,7 +121,6 @@ export const dict = {
       works: "WORKS",
       about: "ABOUT",
       log: "LOG",
-      skills: "SKILLS",
       contacts: "КОНТАКТЫ",
     },
     menu: {
@@ -206,16 +193,6 @@ export const dict = {
       readTime: "ЧТЕНИЕ",
       minutes: "МИН",
       related: "// БОЛЬШЕ СИГНАЛА",
-    },
-    skills: {
-      title: "Скиллы.",
-      label: "// АРСЕНАЛ АГЕНТА",
-      intro: "Свои скиллы, хуки и тулзы, которые кормят мой пайплайн разработки.",
-      all: "ALL",
-      items: "МОДУЛИ",
-      version: "VER",
-      lang: "СТЕК",
-      empty: "В ЭТОЙ КАТЕГОРИИ ПУСТО",
     },
     aboutPage: {
       label: "// МАНИФЕСТ",
