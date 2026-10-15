@@ -11,7 +11,7 @@ export async function GET(context: APIContext) {
     title: "AP3X0_WEB // LOG",
     description:
       "Full-stack products, end to end. Local-first infrastructure & agent-driven engineering.",
-    site: context.site ?? "https://ap3x0s.github.io",
+    site: context.site!,
     items: posts.map((post) => ({
       title: post.data.title,
       description: post.data.description,
