@@ -4,14 +4,17 @@ import { dict, type Lang } from "../i18n/dict";
 
 interface Props {
   lang: Lang;
+  tag?: string;
 }
 
-const { lang } = Astro.props;
+const { lang, tag } = Astro.props;
 const t = dict[lang].blog;
 
-const posts = (
+const all = (
   await getCollection("blog", (p) => p.data.lang === lang && !p.data.draft)
 ).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+
+const posts = tag ? all.filter((p) => p.data.tags.includes(tag)) : all;
 
 const dateFmt = (d: Date) =>
   d.toLocaleDateString(lang === "ru" ? "ru-RU" : "en-US", {
@@ -25,37 +28,53 @@ const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
 ---
 
 <section class="container-page py-16 md:py-24 max-w-5xl">
-  <div class="mb-12">
+  {
+    tag && (
+      <a
+        href={href("/blog")}
+        class="font-mono text-sm text-gold hover:text-white transition-colors tracking-widest"
+      >
+        {t.back}
+      </a>
+    )
+  }
+
+  <div class={tag ? "mt-10 mb-12" : "mb-12"}>
     <h2 class="font-mono text-gold text-sm mb-6 tracking-widest uppercase">
-      {t.label}
+      {tag ? t.taggedLabel : t.label}
     </h2>
     <h1
       class="text-[16vw] md:text-[10vw] font-display uppercase leading-[0.85] tracking-tighter text-white"
     >
-      {t.title}
+      {tag ? `#${tag}` : t.title}
     </h1>
   </div>
 
   <div class="flex flex-col border-t border-line w-full">
     {
       posts.map((post) => (
-        <a
-          href={href(`/blog/${postSlug(post.id)}`)}
-          class="group flex flex-col py-8 border-b border-line hover:border-gold transition-colors w-full"
-        >
+        <div class="group relative py-8 border-b border-line hover:border-gold transition-colors w-full">
           <div class="flex justify-between items-baseline w-full gap-6">
             <div class="min-w-0">
-              <h2 class="text-2xl md:text-4xl font-bold uppercase text-white group-hover:text-gold group-hover:translate-x-4 transition-all duration-300">
-                {post.data.title}
+              <h2 class="text-2xl md:text-4xl font-bold uppercase text-white group-hover:text-gold transition-colors">
+                <a
+                  href={href(`/blog/${postSlug(post.id)}`)}
+                  class="after:absolute after:inset-0"
+                >
+                  {post.data.title}
+                </a>
               </h2>
-              <p class="text-neutral-400 mt-3 max-w-2xl leading-relaxed group-hover:text-neutral-200 transition-colors">
+              <p class="text-neutral-400 mt-3 max-w-2xl leading-relaxed">
                 {post.data.description}
               </p>
-              <div class="flex flex-wrap gap-2 mt-4">
-                {post.data.tags.map((tag) => (
-                  <span class="font-mono text-[10px] text-neutral-500 uppercase tracking-wider">
-                    #{tag}
-                  </span>
+              <div class="flex flex-wrap gap-2 mt-4 relative z-10">
+                {post.data.tags.map((tg) => (
+                  <a
+                    href={href(`/blog/tags/${tg}`)}
+                    class="font-mono text-[10px] text-neutral-500 uppercase tracking-wider hover:text-gold transition-colors"
+                  >
+                    #{tg}
+                  </a>
                 ))}
               </div>
             </div>
@@ -63,7 +82,7 @@ const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
               {dateFmt(post.data.date)}
             </span>
           </div>
-        </a>
+        </div>
       ))
     }
   </div>

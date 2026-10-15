@@ -81,6 +81,7 @@ export const dict = {
     blog: {
       title: "Log.",
       label: "// DATA ARCHIVE",
+      taggedLabel: "// TAGGED",
       back: "[ ← ALL ENTRIES ]",
       published: "PUBLISHED",
       tags: "TAGS",
@@ -200,6 +201,7 @@ export const dict = {
     blog: {
       title: "Лог.",
       label: "// АРХИВ ДАННЫХ",
+      taggedLabel: "// С ТЕГОМ",
       back: "[ ← ВСЕ ЗАПИСИ ]",
       published: "ОПУБЛИКОВАНО",
       tags: "ТЕГИ",
