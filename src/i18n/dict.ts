@@ -95,6 +95,12 @@ export const dict = {
       label: "// MANIFESTO",
       back: "[ ← ROOT ]",
     },
+    notFound: {
+      code: "ERROR 404",
+      title: "SIGNAL LOST",
+      text: "This page doesn't exist or has been moved.",
+      link: "[ RETURN TO ROOT ]",
+    },
   },
   ru: {
     site: {
@@ -187,6 +193,12 @@ export const dict = {
     aboutPage: {
       label: "// МАНИФЕСТ",
       back: "[ ← НА ГЛАВНУЮ ]",
+    },
+    notFound: {
+      code: "ОШИБКА 404",
+      title: "СИГНАЛ ПОТЕРЯН",
+      text: "Этой страницы нет или она была перемещена.",
+      link: "[ НА ГЛАВНУЮ ]",
     },
   },
 } as const;

@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { dict, langFromPath } from "../i18n/dict";
+
+const lang = langFromPath(Astro.url.pathname);
+const t = dict[lang].notFound;
+const root = lang === "ru" ? "/ru" : "/";
+---
+
+<BaseLayout title={t.code} lang={lang}>
+  <section
+    class="container-page min-h-[70vh] flex flex-col items-center justify-center text-center py-24"
+  >
+    <p class="font-mono text-gold text-sm tracking-widest uppercase mb-6">
+      {t.code}
+    </p>
+    <h1
+      class="font-display text-[22vw] md:text-[12vw] uppercase leading-[0.85] tracking-tighter text-white"
+    >
+      {t.title}
+    </h1>
+    <p class="text-neutral-400 mt-8 max-w-md leading-relaxed">{t.text}</p>
+    <a
+      href={root}
+      class="mt-10 inline-flex items-center justify-center px-8 h-14 bg-gold hover:bg-white text-black font-bold uppercase tracking-wider transition-colors cursor-pointer"
+    >
+      {t.link}
+    </a>
+  </section>
+</BaseLayout>
