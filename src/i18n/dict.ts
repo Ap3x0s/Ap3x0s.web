@@ -24,6 +24,7 @@ export const dict = {
     },
     hero: {
       lines: ["BUILD", "SHIP", "OWN THE", "STACK"],
+      status: "AVAILABLE FOR WORK",
       tagline:
         "Full-stack products, end to end. Local-first infrastructure & agent-driven engineering.",
       ctaPrimary: "READ LATEST",
@@ -132,6 +133,7 @@ export const dict = {
     },
     hero: {
       lines: ["BUILD", "SHIP", "OWN THE", "STACK"],
+      status: "ОТКРЫТ К ПРОЕКТАМ",
       tagline:
         "Полноценные продукты под ключ. Локально-фёрст инфраструктура и агентская разработка.",
       ctaPrimary: "ЧИТАТЬ ЛОГ",

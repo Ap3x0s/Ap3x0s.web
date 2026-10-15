@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import GhostTerminal from "./GhostTerminal.tsx";
 import { dict, type Lang } from "../i18n/dict";
+import { about } from "../data/about";
 
 interface Props {
   lang: Lang;
@@ -76,6 +77,12 @@ const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
 
   <!-- Minimal Overlay Info (Desktop Only) -->
   <div class="absolute bottom-10 left-10 z-10 hidden md:block">
+    <p
+      class="font-mono text-xs text-gold uppercase tracking-widest mb-3 flex items-center gap-2"
+    >
+      <span class="inline-block w-2 h-2 bg-gold animate-signal-pulse"></span>
+      {t.hero.status}
+    </p>
     <p class="font-mono text-xs text-neutral-400 uppercase max-w-[200px]">
       {t.hero.tagline}
     </p>
@@ -111,6 +118,27 @@ const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
         >→</span
       >
     </a>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="w-full py-16 px-4 md:px-10 border-t border-line bg-black">
+  <h2 class="font-mono text-gold text-sm mb-8 tracking-widest uppercase">
+    // {about[lang].metricsLabel}
+  </h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line">
+    {
+      about[lang].metrics.map((m) => (
+        <div class="bg-black p-6 text-center">
+          <div class="font-display text-4xl md:text-5xl text-gold uppercase">
+            {m.value}
+          </div>
+          <div class="font-mono text-[10px] uppercase tracking-widest text-neutral-500 mt-3">
+            {m.label}
+          </div>
+        </div>
+      ))
+    }
   </div>
 </section>
 
