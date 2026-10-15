@@ -22,7 +22,7 @@
 
   /* ── Motion ─────────────────────────────────────────────────────── */
   --animate-ghost-scroll: ghost-scroll 55s linear infinite;
-  --animate-cursor-blink: cursor-blink 0.55s steps(2, start) infinite;
+  --animate-cursor-blink: cursor-blink 0.9s ease-in-out infinite;
   --animate-signal-pulse: signal-pulse 2.4s ease-in-out infinite;
 }
 
