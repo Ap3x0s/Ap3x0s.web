@@ -7,6 +7,7 @@ interface Props {
 
 const { lang } = Astro.props;
 const t = dict[lang].footer;
+const contactsHref = lang === "ru" ? "/ru/contacts" : "/contacts";
 ---
 
 <footer
@@ -32,6 +33,12 @@ const t = dict[lang].footer;
     </div>
 
     <nav class="flex items-center gap-6">
+      <a
+        href={contactsHref}
+        class="font-mono text-[10px] uppercase text-neutral-400 hover:text-gold transition-colors tracking-widest"
+      >
+        {dict[lang].nav.contacts}
+      </a>
       <a
         href="https://github.com/Ap3x0s"
         target="_blank"

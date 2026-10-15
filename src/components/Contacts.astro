@@ -1,0 +1,79 @@
+---
+import { dict, type Lang } from "../i18n/dict";
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = dict[lang].contactsPage;
+const root = lang === "ru" ? "/ru" : "/";
+
+const channels = [
+  {
+    label: "[ TELEGRAM ]",
+    title: t.tgTitle,
+    text: t.tgText,
+    link: "https://t.me/Ap3x0",
+    display: "t.me/Ap3x0",
+  },
+  {
+    label: "[ GITHUB ]",
+    title: t.ghTitle,
+    text: t.ghText,
+    link: "https://github.com/Ap3x0s",
+    display: "github.com/Ap3x0s",
+  },
+];
+---
+
+<section class="container-page py-16 md:py-24 max-w-5xl">
+  <a
+    href={root}
+    class="font-mono text-sm text-gold hover:text-white transition-colors tracking-widest"
+  >
+    {t.back}
+  </a>
+
+  <div class="mt-10 mb-12">
+    <h2 class="font-mono text-gold text-sm mb-6 tracking-widest uppercase">
+      {t.label}
+    </h2>
+    <h1
+      class="text-[16vw] md:text-[10vw] font-display uppercase leading-[0.85] tracking-tighter text-white"
+    >
+      {t.title}
+    </h1>
+    <p class="text-neutral-400 mt-6 max-w-2xl leading-relaxed">{t.intro}</p>
+    <p class="font-mono text-xs text-gold uppercase tracking-widest mt-4">
+      ● {t.availability}
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 gap-px bg-line border border-line">
+    {
+      channels.map((ch) => (
+        <a
+          href={ch.link}
+          target="_blank"
+          rel="noopener noreferrer nofollow"
+          class="group bg-black p-6 md:p-8 hover:bg-surface transition-colors flex flex-col"
+        >
+          <span class="font-mono text-xs text-gold tracking-widest">
+            {ch.label}
+          </span>
+          <h2 class="text-xl md:text-2xl font-bold uppercase text-white group-hover:text-gold transition-colors mt-4">
+            {ch.title}
+          </h2>
+          <p class="text-neutral-400 mt-2 leading-relaxed">{ch.text}</p>
+          <span class="font-mono text-sm text-neutral-500 group-hover:text-gold transition-colors mt-6">
+            {ch.display}
+            <span class="inline-block group-hover:translate-x-1 transition-transform">
+              →
+            </span>
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>

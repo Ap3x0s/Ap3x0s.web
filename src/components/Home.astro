@@ -151,3 +151,40 @@ const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
     }
   </div>
 </section>
+
+<!-- CONTACT CTA -->
+<section class="w-full py-20 px-4 md:px-10 border-t border-line bg-black">
+  <h2 class="font-mono text-gold text-sm mb-6 tracking-widest uppercase">
+    {t.homeContact.label}
+  </h2>
+  <div class="flex flex-col md:flex-row justify-between md:items-end gap-8">
+    <div class="max-w-2xl">
+      <h3
+        class="text-[13vw] md:text-8xl font-display uppercase tracking-tighter text-white leading-none"
+      >
+        {t.homeContact.title}
+      </h3>
+      <p class="text-neutral-400 mt-6 leading-relaxed text-lg">
+        {t.homeContact.text}
+      </p>
+    </div>
+    <div class="flex flex-col gap-4 shrink-0">
+      <a
+        href="https://t.me/Ap3x0"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="font-mono text-gold hover:text-white transition-colors uppercase tracking-widest text-sm"
+      >
+        {t.homeContact.tg}
+      </a>
+      <a
+        href="https://github.com/Ap3x0s"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="font-mono text-gold hover:text-white transition-colors uppercase tracking-widest text-sm"
+      >
+        {t.homeContact.gh}
+      </a>
+    </div>
+  </div>
+</section>

@@ -14,6 +14,7 @@ export const dict = {
       about: "ABOUT",
       log: "LOG",
       skills: "SKILLS",
+      contacts: "CONTACTS",
     },
     menu: {
       label: "MENU",
@@ -40,6 +41,13 @@ export const dict = {
     signal: {
       title: "INCOMING\nSIGNAL",
       link: "[DATA ARCHIVE]",
+    },
+    homeContact: {
+      label: "// CONTACTS",
+      title: "LET'S TALK",
+      text: "Have a project, a problem without a Stack Overflow answer, or just want to talk tech? Telegram is the fastest way to reach me.",
+      tg: "[ TELEGRAM → ]",
+      gh: "[ GITHUB → ]",
     },
     footer: {
       copyright: "© 2026 AP3X0_WEB_SYSTEM",
@@ -95,6 +103,17 @@ export const dict = {
       label: "// MANIFESTO",
       back: "[ ← ROOT ]",
     },
+    contactsPage: {
+      label: "// CONTACTS",
+      title: "Contact",
+      intro: "The fastest way to reach me is Telegram. GitHub is open for code, forks and upstream work.",
+      availability: "Open to project work and collaboration.",
+      tgTitle: "Telegram",
+      tgText: "Direct messages — the fastest reply.",
+      ghTitle: "GitHub",
+      ghText: "Repositories, forks, open source.",
+      back: "[ ← ROOT ]",
+    },
     notFound: {
       code: "ERROR 404",
       title: "SIGNAL LOST",
@@ -115,6 +134,7 @@ export const dict = {
       about: "ABOUT",
       log: "LOG",
       skills: "SKILLS",
+      contacts: "КОНТАКТЫ",
     },
     menu: {
       label: "MENU",
@@ -141,6 +161,13 @@ export const dict = {
     signal: {
       title: "ВХОДЯЩИЙ\nСИГНАЛ",
       link: "[АРХИВ ДАННЫХ]",
+    },
+    homeContact: {
+      label: "// КОНТАКТЫ",
+      title: "ДАВАЙ ОБСУДИМ",
+      text: "Есть проект, задача без ответа на Stack Overflow или просто хочется поговорить о технологиях? Telegram — самый быстрый способ связаться.",
+      tg: "[ TELEGRAM → ]",
+      gh: "[ GITHUB → ]",
     },
     footer: {
       copyright: "© 2026 AP3X0_WEB_SYSTEM",
@@ -192,6 +219,17 @@ export const dict = {
     },
     aboutPage: {
       label: "// МАНИФЕСТ",
+      back: "[ ← НА ГЛАВНУЮ ]",
+    },
+    contactsPage: {
+      label: "// КОНТАКТЫ",
+      title: "Контакты",
+      intro: "Самый быстрый способ связаться — Telegram. GitHub открыт для кода, форков и апстрим-контрибьюций.",
+      availability: "Открыт к проектному сотрудничеству.",
+      tgTitle: "Telegram",
+      tgText: "Личные сообщения — быстрый ответ.",
+      ghTitle: "GitHub",
+      ghText: "Репозитории, форки, open source.",
       back: "[ ← НА ГЛАВНУЮ ]",
     },
     notFound: {

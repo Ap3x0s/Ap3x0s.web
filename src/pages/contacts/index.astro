@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Contacts from "../../components/Contacts.astro";
+import { dict } from "../../i18n/dict";
+---
+
+<BaseLayout
+  title={dict.en.contactsPage.title}
+  description={dict.en.contactsPage.intro}
+  lang="en"
+>
+  <Contacts lang="en" />
+</BaseLayout>
