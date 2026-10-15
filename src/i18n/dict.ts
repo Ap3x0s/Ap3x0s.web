@@ -51,7 +51,6 @@ export const dict = {
     },
     footer: {
       copyright: "© 2026 AP3X0_WEB_SYSTEM",
-      engineered: "ENGINEERED WITH ASTRO",
       github: "[GITHUB]",
       telegram: "[TELEGRAM]",
       rss: "[RSS]",
@@ -172,7 +171,6 @@ export const dict = {
     },
     footer: {
       copyright: "© 2026 AP3X0_WEB_SYSTEM",
-      engineered: "ENGINEERED WITH ASTRO",
       github: "[GITHUB]",
       telegram: "[TELEGRAM]",
       rss: "[RSS]",

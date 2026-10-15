@@ -17,19 +17,9 @@ const contactsHref = lang === "ru" ? "/ru/contacts" : "/contacts";
     class="container-page flex flex-col md:flex-row justify-between items-center gap-4"
   >
     <div
-      class="flex flex-col md:flex-row items-center gap-2 md:gap-6 text-center md:text-left"
+      class="font-mono text-[10px] text-neutral-500 uppercase tracking-widest text-center md:text-left"
     >
-      <div
-        class="font-mono text-[10px] text-neutral-500 uppercase tracking-widest"
-      >
-        {t.copyright}
-      </div>
-      <div class="hidden md:block h-3 w-px bg-line"></div>
-      <div
-        class="font-mono text-[10px] text-neutral-600 uppercase tracking-widest"
-      >
-        {t.engineered}
-      </div>
+      {t.copyright}
     </div>
 
     <nav class="flex items-center gap-6">
