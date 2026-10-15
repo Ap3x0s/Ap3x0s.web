@@ -46,6 +46,15 @@ const fullTitle = `${title} ${t.site.titleSuffix}`;
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content="AP3X0_WEB" />
+    <meta
+      property="og:image"
+      content={new URL("/og.png", Astro.site ?? Astro.url.origin).href}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:image"
+      content={new URL("/og.png", Astro.site ?? Astro.url.origin).href}
+    />
 
     <link
       rel="alternate"
