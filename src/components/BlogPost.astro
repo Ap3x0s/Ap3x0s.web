@@ -1,6 +1,6 @@
 ---
 import type { CollectionEntry } from "astro:content";
-import { render } from "astro:content";
+import { render, getCollection } from "astro:content";
 import { dict, type Lang } from "../i18n/dict";
 import { works } from "../data/works";
 
@@ -27,6 +27,13 @@ const postSlug = post.id.replace(/^(en|ru)\//, "");
 const relatedWork = works.find((w) =>
   w.relatedPosts?.includes(postSlug),
 );
+
+const all = (
+  await getCollection("blog", (p) => p.data.lang === lang && !p.data.draft)
+).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const idx = all.findIndex((p) => p.id === post.id);
+const prev = idx > 0 ? all[idx - 1] : undefined;
+const next = idx >= 0 && idx < all.length - 1 ? all[idx + 1] : undefined;
 
 const other: Lang = lang === "en" ? "ru" : "en";
 const otherHref =
@@ -106,6 +113,43 @@ const otherHref =
   >
     <Content />
   </div>
+
+  {
+    (prev || next) && (
+      <nav class="border-t border-line mt-14 pt-8 flex justify-between gap-4">
+        {prev ? (
+          <a
+            href={`${blogHref}/${postSlug(prev.id)}`}
+            class="group max-w-[45%]"
+          >
+            <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest block mb-2 group-hover:text-gold transition-colors">
+              {t.prev}
+            </span>
+            <span class="text-sm md:text-lg font-bold uppercase text-white group-hover:text-gold transition-colors">
+              {prev.data.title}
+            </span>
+          </a>
+        ) : (
+          <span />
+        )}
+        {next ? (
+          <a
+            href={`${blogHref}/${postSlug(next.id)}`}
+            class="group max-w-[45%] text-right"
+          >
+            <span class="font-mono text-xs text-neutral-500 uppercase tracking-widest block mb-2 group-hover:text-gold transition-colors">
+              {t.next}
+            </span>
+            <span class="text-sm md:text-lg font-bold uppercase text-white group-hover:text-gold transition-colors">
+              {next.data.title}
+            </span>
+          </a>
+        ) : (
+          <span />
+        )}
+      </nav>
+    )
+  }
 
   <div class="border-t border-line mt-16 pt-8 flex justify-between font-mono text-xs uppercase tracking-widest">
     <span class="text-neutral-600">AP3X0_WEB // LOG</span>
