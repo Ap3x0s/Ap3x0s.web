@@ -41,6 +41,8 @@ const fullTitle = `${title} ${t.site.titleSuffix}`;
     />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icon-192.png" />
 
     <meta property="og:type" content="website" />
     <meta property="og:title" content={fullTitle} />
@@ -133,6 +135,10 @@ const fullTitle = `${title} ${t.site.titleSuffix}`;
           a.click();
           setTimeout(() => a.remove(), 0);
         });
+
+        if ("serviceWorker" in navigator) {
+          navigator.serviceWorker.register("/sw.js");
+        }
       })();
     </script>
   </body>
