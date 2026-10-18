@@ -77,6 +77,7 @@ export const dict = {
       github: "[GITHUB]",
       telegram: "[TELEGRAM]",
       rss: "[RSS]",
+      decisions: "DECISIONS",
     },
     telemetry: {
       offset: "OFFSET",
@@ -117,6 +118,11 @@ export const dict = {
     },
     aboutPage: {
       label: "// MANIFESTO",
+      back: "[ ← ROOT ]",
+    },
+    decisionsPage: {
+      label: "// DECISIONS",
+      title: "Decisions",
       back: "[ ← ROOT ]",
     },
     contactsPage: {
@@ -213,6 +219,7 @@ export const dict = {
       github: "[GITHUB]",
       telegram: "[TELEGRAM]",
       rss: "[RSS]",
+      decisions: "РЕШЕНИЯ",
     },
     telemetry: {
       offset: "OFFSET",
@@ -252,6 +259,11 @@ export const dict = {
     },
     aboutPage: {
       label: "// МАНИФЕСТ",
+      back: "[ ← НА ГЛАВНУЮ ]",
+    },
+    decisionsPage: {
+      label: "// РЕШЕНИЯ",
+      title: "Решения",
       back: "[ ← НА ГЛАВНУЮ ]",
     },
     contactsPage: {

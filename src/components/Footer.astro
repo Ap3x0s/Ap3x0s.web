@@ -24,6 +24,12 @@ const contactsHref = lang === "ru" ? "/ru/contacts" : "/contacts";
 
     <nav class="flex items-center gap-6">
       <a
+        href={lang === "ru" ? "/ru/decisions" : "/decisions"}
+        class="font-mono text-[10px] uppercase text-neutral-400 hover:text-gold transition-colors tracking-widest"
+      >
+        {t.decisions}
+      </a>
+      <a
         href={contactsHref}
         class="font-mono text-[10px] uppercase text-neutral-400 hover:text-gold transition-colors tracking-widest"
       >

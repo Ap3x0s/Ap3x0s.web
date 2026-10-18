@@ -1,0 +1,14 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Decisions from "../../components/Decisions.astro";
+import { dict } from "../../i18n/dict";
+import { decisions } from "../../data/decisions";
+---
+
+<BaseLayout
+  title={dict.en.decisionsPage.title}
+  description={decisions.en.intro}
+  lang="en"
+>
+  <Decisions lang="en" />
+</BaseLayout>
