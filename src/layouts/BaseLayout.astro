@@ -79,5 +79,61 @@ const fullTitle = `${title} ${t.site.titleSuffix}`;
     </main>
     <Footer lang={lang} />
     <ScrollTelemetry lang={lang} />
+
+    <script is:inline>
+      (() => {
+        if (window.__ap3x0) return;
+        window.__ap3x0 = true;
+
+        console.log(
+          "%c █████╗ ██████╗ ██████╗ ██╗  ██╗ ██████╗ \n" +
+            "██╔══██╗██╔══██╗╚════██╗╚██╗██╔╝██╔═████╗\n" +
+            "███████║██████╔╝ █████╔╝ ╚███╔╝ ██║██╔██║\n" +
+            "██╔══██║██╔═══╝ ╚═══██╗ ██╔██╗ ████╔╝██║\n" +
+            "██║  ██║██║     ██████╔╝██╔╝ ██╗╚██████╔╝\n" +
+            "╚═╝  ╚═╝╚═╝     ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ",
+          "color:#FFC800;font-family:monospace;font-size:11px;line-height:1.15;"
+        );
+        console.log(
+          "%cAP3X0_WEB_SYSTEM // local-first portfolio. zero telemetry, zero cloud.",
+          "color:#d4d4d4;font-family:monospace;font-size:12px;"
+        );
+        console.log(
+          "%clooking for an engineer? -> /contacts   |   keyboard: g then h/w/a/l/c/d",
+          "color:#737373;font-family:monospace;font-size:12px;"
+        );
+
+        let gAt = 0;
+        const paths = {
+          h: "/",
+          w: "/works",
+          a: "/about",
+          l: "/blog",
+          c: "/contacts",
+          d: "/decisions",
+        };
+        document.addEventListener("keydown", (e) => {
+          if (e.metaKey || e.ctrlKey || e.altKey) return;
+          const tag = (e.target && e.target.tagName) || "";
+          if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+          const key = e.key.toLowerCase();
+          if (key === "g") {
+            gAt = Date.now();
+            return;
+          }
+          const path = paths[key];
+          if (!path || Date.now() - gAt > 900) return;
+          gAt = 0;
+          const ru =
+            location.pathname === "/ru" ||
+            location.pathname.startsWith("/ru/");
+          const a = document.createElement("a");
+          a.href = (ru ? "/ru" : "") + path;
+          document.body.appendChild(a);
+          a.click();
+          setTimeout(() => a.remove(), 0);
+        });
+      })();
+    </script>
   </body>
 </html>
