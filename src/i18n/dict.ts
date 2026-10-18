@@ -38,6 +38,29 @@ export const dict = {
       p2: "My name is Evgeny (Ap3x0). Full-stack developer, ~4 years in production: from first scripts in 2020 and math school at VMK MSU to matchmaking platforms with RBAC/RLS.",
       link: "[READ MANIFESTO]",
     },
+    homePaths: {
+      label: "// WHO ARE YOU?",
+      options: [
+        {
+          num: "01",
+          label: "HIRING ME",
+          desc: "Stack, experience, track record",
+          href: "/about",
+        },
+        {
+          num: "02",
+          label: "NEED AN AUDIT",
+          desc: "Findings from a passed CSO audit",
+          href: "/works/tgtwitchapp",
+        },
+        {
+          num: "03",
+          label: "BUILD WITH ME",
+          desc: "Telegram & GitHub — fastest way in",
+          href: "/contacts",
+        },
+      ],
+    },
     signal: {
       title: "INCOMING\nSIGNAL",
       link: "[DATA ARCHIVE]",
@@ -150,6 +173,29 @@ export const dict = {
       p1: "Задача никогда не «сделать сайт». Это проверка гипотезы, запуск MVP, подключение платежей, автоматизация того, что съедает время команды.",
       p2: "Меня зовут Евгений (Ap3x0). Full-stack разработчик, ~4 года в проде: от первых скриптов 2020-го и матшколы при ВМК МГУ до матчмейкинг-платформ с RBAC/RLS.",
       link: "[ЧИТАТЬ МАНИФЕСТ]",
+    },
+    homePaths: {
+      label: "// КТО ТЫ?",
+      options: [
+        {
+          num: "01",
+          label: "Я НАНИМАЮ",
+          desc: "Стек, опыт, результаты",
+          href: "/about",
+        },
+        {
+          num: "02",
+          label: "НУЖЕН АУДИТ",
+          desc: "Находки из пройденного CSO-аудита",
+          href: "/works/tgtwitchapp",
+        },
+        {
+          num: "03",
+          label: "ХОЧУ СТРОИТЬ",
+          desc: "Telegram и GitHub — быстрее всего",
+          href: "/contacts",
+        },
+      ],
     },
     signal: {
       title: "ВХОДЯЩИЙ\nСИГНАЛ",

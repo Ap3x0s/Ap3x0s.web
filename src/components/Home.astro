@@ -89,6 +89,33 @@ const postSlug = (id: string) => id.replace(/^(en|ru)\//, "");
   </div>
 </section>
 
+<!-- ROLE ROUTER -->
+<section class="w-full py-16 px-4 md:px-10 border-t border-line bg-black">
+  <h2 class="font-mono text-gold text-sm mb-8 tracking-widest uppercase">
+    {t.homePaths.label}
+  </h2>
+  <div class="border-t border-line">
+    {
+      t.homePaths.options.map((o) => (
+        <a
+          href={href(o.href)}
+          class="group flex flex-col md:flex-row md:items-baseline gap-2 md:gap-8 py-8 border-b border-line hover:border-gold transition-colors"
+        >
+          <span class="font-mono text-xs text-neutral-600 group-hover:text-gold transition-colors shrink-0">
+            {o.num}
+          </span>
+          <span class="font-display text-3xl md:text-5xl uppercase text-white group-hover:text-gold group-hover:translate-x-2 transition-all duration-300">
+            {o.label}
+          </span>
+          <span class="font-mono text-[10px] md:text-xs text-neutral-500 uppercase tracking-widest md:ml-auto shrink-0">
+            {o.desc} →
+          </span>
+        </a>
+      ))
+    }
+  </div>
+</section>
+
 <!-- ABOUT ME -->
 <section
   class="w-full py-20 px-4 md:px-10 border-t border-line bg-black text-neutral-300"
